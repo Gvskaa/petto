@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class BuatTabelAdmin extends Migration
+class BuatTabelPenjual extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class BuatTabelAdmin extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
+        Schema::create('penjual', function (Blueprint $table) {
             $table->id();
-            $table->string('username_admin');
-            $table->string('email_admin');
-            $table->string('password_admin');
+            $table->foreignId('id_admin');
+            $table->string('nama_penjual');
+            $table->string('email_penjual');
+            $table->string('password_penjual');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class BuatTabelAdmin extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('penjual');
     }
 }
