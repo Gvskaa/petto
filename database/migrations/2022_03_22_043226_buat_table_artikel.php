@@ -16,8 +16,8 @@ class BuatTableArtikel extends Migration
         Schema::create('artikel', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_admin');
-            $table->sting('judul_artikel');
-            $table->sting('isi_artikel');
+            $table->string('judul_artikel');
+            $table->string('isi_artikel');
             $table->timestamps();
         });
     }
