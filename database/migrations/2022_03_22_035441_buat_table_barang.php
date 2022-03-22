@@ -16,10 +16,10 @@ class BuatTableBarang extends Migration
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_penjual');
-            $table->int('harga_barang');
+            $table->integer('harga_barang');
             $table->string('nama_barang');
             $table->String('keterangan');
-            $table->int('stok_barang');
+            $table->integer('stok_barang');
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class BuatTablePembelian extends Migration
             $table->id();
             $table->foreignId('id_pembeli');
             $table->foreignId('id_barang');
-            $table->int('jumlah_barang');
+            $table->integer('jumlah_barang');
             $table->string('status_pembayaran');
             $table->timestamps();
         });
