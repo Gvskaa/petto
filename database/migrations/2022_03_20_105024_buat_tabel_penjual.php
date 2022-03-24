@@ -20,6 +20,7 @@ class BuatTabelPenjual extends Migration
             $table->string('nama_penjual');
             $table->string('email_penjual');
             $table->string('password_penjual');
+            $table->string('status_penjual');
             $table->timestamps();
         });
     }

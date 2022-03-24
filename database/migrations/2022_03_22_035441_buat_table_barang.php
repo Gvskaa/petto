@@ -17,9 +17,12 @@ class BuatTableBarang extends Migration
             $table->id();
             $table->foreignId('id_penjual');
             $table->integer('harga_barang');
+            $table->string('foto_barang');
             $table->string('nama_barang');
             $table->String('keterangan');
             $table->integer('stok_barang');
+            $table->string('kategori_barang');
+            $table->string('status_barang');
             $table->timestamps();
         });
     }
