@@ -15,7 +15,7 @@ class BuatTabelAdmin extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->id();
-            $table->string('username_admin');
+            $table->string('nama_admin');
             $table->string('email_admin');
             $table->string('password_admin');
             $table->timestamps();

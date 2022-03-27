@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable; 
 use Laravel\Sanctum\HasApiTokens;
 
-class Pembeli extends Authenticatable
+class Penjual extends Authenticatable 
 {
+
     use HasFactory, HasApiTokens;
-    protected $table = 'pembeli';
+    protected $table = 'penjual';
     protected $foreignId = 'id_admin';
     protected $primarykey = 'id';
     protected $fillable = [

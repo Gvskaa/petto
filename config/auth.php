@@ -40,6 +40,21 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
+
+         'pembeli' => [
+            'driver' => 'session',
+            'provider' => 'pembeli',
+        ],
+
+        'penjual' => [
+            'driver' => 'session',
+            'provider' => 'penjual',
+        ],
     ],
 
     /*
@@ -64,6 +79,19 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'pembeli' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Pembeli::class,
+        ],
+        'penjual' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Penjual::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
