@@ -8,9 +8,11 @@ use App\Models\Pengguna;
 class PenggunaController extends Controller
 {
     public function index(){ 
+        return view ('index');
+    }
 
-        $daftar_pengguna = Pengguna::all();
-        return view('daftar_pengguna.index', compact(daftar_pengguna));
+    public function login(){
+        return view ('login');
     }
 
 }
