@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\Web\Admin\
 
+use App\Http\Controllers\Web\Pembeli\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/pembeli/register', [AuthController::class, "halaman_register"])->name('pembeli.register.halaman');
+
+Route::post('/pembeli/register',[AuthController::class, "submit_register"])->name('pembeli.register.submit');
