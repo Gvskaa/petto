@@ -14,6 +14,7 @@ class PembeliController extends Controller
             "email_pembeli" => $request->email_pembeli,
             "password_pembeli" => $request->password_pembeli,
             "jk_pembeli" => $request->jk_pembeli,
+            "tlp_pembeli" => $request->tlp_pembeli,
             "alamat_pembeli" => $request->alamat_pembeli
         ]);
         return $pembeli;
@@ -28,6 +29,7 @@ class PembeliController extends Controller
             "email_pembeli" => $request->email_pembeli,
             "password_pembeli" => $request->password_pembeli,
             "jk_pembeli" => $request->jk_pembeli,
+            "tlp_pembeli" => $request->tlp_pembeli,
             "alamat_pembeli" => $request->alamat_pembeli
         ]);
         return $pembeli;

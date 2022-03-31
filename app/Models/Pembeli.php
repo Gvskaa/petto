@@ -4,16 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable; 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class Pembeli extends Authenticatable
 {
     use HasFactory, HasApiTokens;
     protected $table = 'pembeli';
-    protected $foreignId = 'id_admin';
+    //protected $foreignId = 'id_admin'->nullable();
     protected $primarykey = 'id';
+
+    protected $guarded = [];
+    protected $hidden = ['password_pembeli'];
     protected $fillable = [
-        'nama_pembeli', 'email_pembeli', 'password_pembeli', 'jk_pembeli', ' tlp_pembeli', 'alamat_pembeli' 
+        'nama_pembeli', 'email_pembeli', 'password_pembeli', 'jk_pembeli', 'tlp_pembeli', 'alamat_pembeli'
     ];
+
+    public function admin(){
+        return $this->belongsTo(
+            Admin::class,
+            "id_admin",
+            "id"
+        );
+    }
 }

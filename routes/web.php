@@ -22,3 +22,9 @@ Route::get('/', function () {
 Route::get('/pembeli/register', [AuthController::class, "halaman_register"])->name('pembeli.register.halaman');
 
 Route::post('/pembeli/register',[AuthController::class, "submit_register"])->name('pembeli.register.submit');
+
+Route::get('/pembeli/login', [AuthController::class, 'halaman_login'])->name('pembeli.login.halaman');
+Route::post('/pembeli/login', [AuthController::class, 'submit_login'])->name('pembeli.halaman.login');
+
+Route::get('home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('actionlogout', [AuthController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');

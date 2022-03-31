@@ -15,14 +15,12 @@ class BuatTabelPembeli extends Migration
     {
         Schema::create('pembeli', function (Blueprint $table) {
             $table->id();
-            //$table->foreignId('id_admin');
             $table->string('nama_pembeli');
             $table->string('email_pembeli');
             $table->string('password_pembeli');
             $table->string('jk_pembeli');
             $table->string('tlp_pembeli');
             $table->string('alamat_pembeli');
-
             $table->timestamps();
         });
     }
