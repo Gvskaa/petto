@@ -13,7 +13,7 @@ class AuthController extends Controller
 {
     public function halaman_register(){
         return view('pembeli.auth.register');
-    } 
+    }
 
     public function submit_register(Request $request){
         $nama_pembeli = $request->nama_pembeli;
@@ -23,12 +23,12 @@ class AuthController extends Controller
         $pembeli_baru = Pembeli::create([
             "nama_pembeli" => $nama_pembeli,
             "email_pembeli" => $email_pembeli,
-            "password_pembeli" => Hash::make($password)
+            "password_pembeli" => Hash::make($password_pembeli)
         ]);
 
         $identitas = [
-            "email_pembeli" => $email,
-            "password_pembeli" => $password_pembeli 
+            "email_pembeli" => $email_pembeli,
+            "password_pembeli" => $password_pembeli
         ];
 
         if(Auth::guard('pembeli')->attempt($identitas)){
