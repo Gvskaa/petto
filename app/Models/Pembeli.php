@@ -18,7 +18,7 @@ class Pembeli extends Authenticatable
     protected $guarded = [];
     protected $hidden = ['password_pembeli'];
     protected $fillable = [
-        'nama_pembeli', 'email_pembeli', 'password_pembeli', 'jk_pembeli', 'tlp_pembeli', 'alamat_pembeli'
+        'nama_pembeli', 'email', 'password', 'jk_pembeli', 'tlp_pembeli', 'alamat_pembeli'
     ];
 
     public function admin(){

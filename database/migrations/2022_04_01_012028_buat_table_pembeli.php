@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class BuatTabelPembeli extends Migration
+class BuatTablePembeli extends Migration
 {
     /**
      * Run the migrations.
@@ -16,8 +16,8 @@ class BuatTabelPembeli extends Migration
         Schema::create('pembeli', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pembeli');
-            $table->string('email_pembeli');
-            $table->string('password_pembeli');
+            $table->string('email');
+            $table->string('password');
             $table->string('jk_pembeli');
             $table->string('tlp_pembeli');
             $table->string('alamat_pembeli');
