@@ -15,6 +15,9 @@ class AuthController extends Controller
     public function halaman_register(){
         return view('pembeli.auth.register');
     }
+    public function halaman_login(){
+        return view('pembeli.auth.login');
+    }
 
 
     public function halaman_profil(){
@@ -51,13 +54,9 @@ class AuthController extends Controller
         if(Auth::guard('pembeli')->attempt($identitas)){
             $request -> session()->regenerate();
 
-            return redirect()->route('/profil');
+            return redirect()->route('pembeli.profil');
         }else{
             abort(401);
         }
     }
-
-
-
-
 }
