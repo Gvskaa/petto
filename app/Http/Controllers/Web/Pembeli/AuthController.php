@@ -15,6 +15,9 @@ class AuthController extends Controller
     public function halaman_register(){
         return view('pembeli.auth.register');
     }
+    public function halaman_login(){
+        return view('pembeli.auth.login');
+    }
 
 
     public function halaman_profil(){
@@ -56,8 +59,4 @@ class AuthController extends Controller
             abort(401);
         }
     }
-
-
-
-
 }

@@ -20,7 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/pembeli/profil', [AuthController::class, "halaman_profil"])->name('pembeli.profil');
-Route::get('/pembeli/register', [AuthController::class, "halaman_register"])->name('pembeli.register.halaman');
 
+Route::get('/pembeli/register', [AuthController::class, "halaman_register"])->name('pembeli.register.halaman');
 Route::post('/pembeli/register',[AuthController::class, "submit_register"])->name('pembeli.register.submit');
 
+Route::get('/pembeli/login',[AuthController::class, "halaman_login"])->name('pembeli.login.halaman');
