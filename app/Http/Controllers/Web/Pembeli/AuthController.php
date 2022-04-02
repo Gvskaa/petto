@@ -51,7 +51,7 @@ class AuthController extends Controller
         if(Auth::guard('pembeli')->attempt($identitas)){
             $request -> session()->regenerate();
 
-            return redirect()->route('/profil');
+            return redirect()->route('pembeli.profil');
         }else{
             abort(401);
         }
