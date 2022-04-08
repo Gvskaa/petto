@@ -15,7 +15,7 @@ class BuatTableBarang extends Migration
     {
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_penjual');
+            $table->foreignId('id_penjual')->nullable();
             $table->integer('harga_barang');
             $table->string('foto_barang');
             $table->string('nama_barang');

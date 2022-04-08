@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Petto | Masuk</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
-    <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="/admin/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/admin/css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="/admin/images/favicon.png" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Petto | Masuk</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
+  <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/admin/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/admin/css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/admin/images/favicon.png" />
 </head>
 <body>
 <div class="container-scroller">
@@ -25,13 +25,13 @@
             <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                 <div class="brand-logo">
-                <img src="/admin/images/logos.png" alt="logo">
+                <img src="/admin/images/logo.svg" alt="logo">
                 </div>
                 <h4>Hallo!</h4>
                 <h6 class="font-weight-light">Masuk untuk melanjutkan.</h6>
                 <form class="pt-3"
                     method="POST"
-                    action="{{route ('pembeli.login.halaman')}}"
+                    action="{{route ('penjual.login')}}"
                 >
                 @csrf
                 <div class="form-group">
@@ -41,7 +41,7 @@
                     <input type="password" class="form-control form-control-lg" name="password" placeholder="Password">
                 </div>
                 <div class="mt-3">
-                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Masuk</a>
+                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Masuk</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                     <div class="form-check">
@@ -53,7 +53,7 @@
                     <a href="#" class="auth-link text-black">Lupa password?</a>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                    Belum mempunyai akun? <a href="{{route('pembeli.register.halaman')}}" class="text-primary">Buat</a>
+                    Belum mempunyai akun? <a href="register" class="text-primary">Hubungi Admin!</a>
                 </div>
                 </form>
             </div>

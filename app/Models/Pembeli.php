@@ -12,13 +12,13 @@ class Pembeli extends Authenticatable
 {
     use HasFactory, HasApiTokens;
     protected $table = 'pembeli';
-    //protected $foreignId = 'id_admin'->nullable();
+    protected $foreignId = 'id_admin';
     protected $primarykey = 'id';
 
     protected $guarded = [];
     protected $hidden = ['password_pembeli'];
     protected $fillable = [
-        'nama_pembeli', 'email', 'password', 'jk_pembeli', 'tlp_pembeli', 'alamat_pembeli'
+        'id_admin','nama_pembeli', 'email', 'password', 'jk_pembeli', 'tlp_pembeli', 'alamat_pembeli'
     ];
 
     public function admin(){

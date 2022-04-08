@@ -15,12 +15,13 @@ class BuatTabelPenjual extends Migration
     {
         Schema::create('penjual', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_admin');
+            $table->foreignId('id_admin')->nullable();
             $table->string('nama_toko');
             $table->string('nama_penjual');
             $table->string('email_penjual');
             $table->string('password_penjual');
             $table->string('status_penjual');
+            $table->string('tlp_penjual');
             $table->timestamps();
         });
     }
