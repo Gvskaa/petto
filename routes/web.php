@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Web\Pembeli\AuthController;
 use App\Http\Controllers\Web\Penjual\AuthController as PenjualAuthController;
+use App\Http\Controllers\Web\Admin\ArtikelController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,10 +26,11 @@ Route::get('/admin/registrasipenjual', [AdminAuthController::class, "halaman_reg
 Route::post('/admin/registrasipenjual',[AdminAuthController::class, "submit_register_penjual"])->name('admin.registerpenjual.submit');
 
 Route::middleware(['auth:admin'])->group(function(){
-Route::get('/admin/dashboard', [AdminAuthController::class, "halaman_dashboard_admin"])->name('admin.dashboard');
-Route::get('/admin/logout', [AdminAuthController::class, "logout"])->name('admin.logout');
-
+    Route::get('/admin/dashboard', [AdminAuthController::class, "halaman_dashboard_admin"])->name('admin.dashboard');
+    Route::get('/admin/logout', [AdminAuthController::class, "logout"])->name('admin.logout');
+    Route::get('/admin/artikel', [ArtikelController::class, "index"])->name('admin.artikel.index');
 });
+
 Route::get('/pembeli/login',[AuthController::class, "halaman_login"])->name('pembeli.login.halaman');
 Route::get('/pembeli/profil', [AuthController::class, "halaman_profil"])->name('pembeli.profil');
 Route::get('/pembeli/register', [AuthController::class, "halaman_register"])->name('pembeli.register.halaman');

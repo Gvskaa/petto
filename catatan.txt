@@ -1,0 +1,24 @@
+http response code -> untuk melihat kegunaan kode pada api
+
+
+- untuk mengambil data git terbaru
+	git pull
+
+- untuk mengepush
+	git add .
+	git commit -m "pesan"
+	git push
+
+- apabila baru mengclone repositori
+	composser install
+	php artisan migrate
+
+-membuat migration
+    php artisan make:migration --create=nama_tabel_buat_diphpmyadmin namatabeldilaravel
+
+-membuat controller
+    php artisan make:controller nama_controller
+
+-membuat model
+    php artisan make:model nama_model
+

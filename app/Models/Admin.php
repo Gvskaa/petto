@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Sanctum\HasApiTokens; 
+use Laravel\Sanctum\HasApiTokens;
 
 class Admin extends Authenticatable
 {
@@ -16,5 +16,13 @@ class Admin extends Authenticatable
     protected $fillable = [
         'nama_admin', 'email', 'password'
     ];
+
+    public function artikel(){
+        return $this->hasMany(
+            Artikel::class,
+            "id_admin",
+            "id"
+        );
+    }
 
 }
