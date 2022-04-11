@@ -5,8 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Web\Pembeli\AuthController;
 use App\Http\Controllers\Web\Penjual\AuthController as PenjualAuthController;
+<<<<<<< HEAD
+use App\Http\Controllers\Web\Admin\ArtikelController;
+=======
 use App\Http\Controllers\Web\Admin\PembeliController;
 use App\Http\Controllers\Web\Admin\PenjualController;
+>>>>>>> 70998dc1f0b2863a197772b1e99ff41833426fce
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +31,11 @@ Route::get('/admin/registrasipenjual', [AdminAuthController::class, "halaman_reg
 Route::post('/admin/registrasipenjual',[AdminAuthController::class, "submit_register_penjual"])->name('admin.registerpenjual.submit');
 
 Route::middleware(['auth:admin'])->group(function(){
+<<<<<<< HEAD
+    Route::get('/admin/dashboard', [AdminAuthController::class, "halaman_dashboard_admin"])->name('admin.dashboard');
+    Route::get('/admin/logout', [AdminAuthController::class, "logout"])->name('admin.logout');
+    Route::get('/admin/artikel', [ArtikelController::class, "index"])->name('admin.artikel.index');
+=======
 Route::get('/admin/dashboard', [AdminAuthController::class, "halaman_dashboard_admin"])->name('admin.dashboard');
 Route::get('/admin/logout', [AdminAuthController::class, "logout"])->name('admin.logout');
 Route::get('/admin/penjual/daftar', [PenjualController::class, "halaman_daftar_penjual"])->name('admin.penjual.daftar');
@@ -36,7 +45,9 @@ Route::get('/admin/pembeli/daftar', [PembeliController::class, "halaman_daftar_p
 Route::get('/admin/pembeli/tambah', [PembeliController::class, "halaman_register_pembeli"])->name('admin.pembeli.halaman');
 Route::post('/admin/pembeli/tambah', [PembeliController::class, "submit_register_pembeli"])->name('admin.pembeli.submit');
 
+>>>>>>> 70998dc1f0b2863a197772b1e99ff41833426fce
 });
+
 Route::get('/pembeli/login',[AuthController::class, "halaman_login"])->name('pembeli.login.halaman');
 Route::get('/pembeli/profil', [AuthController::class, "halaman_profil"])->name('pembeli.profil');
 Route::get('/pembeli/register', [AuthController::class, "halaman_register"])->name('pembeli.register.halaman');
