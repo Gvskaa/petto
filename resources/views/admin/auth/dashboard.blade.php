@@ -173,7 +173,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('admin.pembeli.submit')}}">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Registrasi Pembeli</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.pembeli.daftar')}}">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Pembeli</span>
             </a>

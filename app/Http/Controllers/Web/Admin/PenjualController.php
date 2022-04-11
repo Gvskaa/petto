@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Penjual;
-use App\Models\Pengguna;
 
 class PenjualController extends Controller
 {

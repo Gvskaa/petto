@@ -32,6 +32,9 @@ Route::get('/admin/logout', [AdminAuthController::class, "logout"])->name('admin
 Route::get('/admin/penjual/daftar', [PenjualController::class, "halaman_daftar_penjual"])->name('admin.penjual.daftar');
 Route::get('/admin/penjual/tambah', [PenjualController::class, "halaman_register_penjual"])->name('admin.penjual.halaman');
 Route::post('/admin/penjual/tambah', [PenjualController::class, "submit_register_penjual"])->name('admin.penjual.submit');
+Route::get('/admin/pembeli/daftar', [PembeliController::class, "halaman_daftar_pembeli"])->name('admin.pembeli.daftar');
+Route::get('/admin/pembeli/tambah', [PembeliController::class, "halaman_register_pembeli"])->name('admin.pembeli.halaman');
+Route::post('/admin/pembeli/tambah', [PembeliController::class, "submit_register_pembeli"])->name('admin.pembeli.submit');
 
 });
 Route::get('/pembeli/login',[AuthController::class, "halaman_login"])->name('pembeli.login.halaman');

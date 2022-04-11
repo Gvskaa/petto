@@ -25,4 +25,12 @@ class Admin extends Authenticatable
         );
     }
 
+    public function pembeli(){
+        return $this->hasMany(
+            Pembeli::class,
+            "id_admin",
+            "id"
+        );
+    }
+
 }
