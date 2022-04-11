@@ -17,15 +17,18 @@ class Admin extends Authenticatable
         'nama_admin', 'email', 'password'
     ];
 
-<<<<<<< HEAD
+
     public function artikel(){
         return $this->hasMany(
             Artikel::class,
-=======
+            "id_admin",
+            "id"
+        );
+    }
+
     public function penjual(){
         return $this->hasMany(
             Penjual::class,
->>>>>>> 70998dc1f0b2863a197772b1e99ff41833426fce
             "id_admin",
             "id"
         );

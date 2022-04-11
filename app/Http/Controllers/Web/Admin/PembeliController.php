@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pembeli;
+use Illuminate\Support\Facades\Hash;
 
 class PembeliController extends Controller
 {
@@ -34,7 +35,7 @@ class PembeliController extends Controller
         $alamat_pembeli = $request->alamat_pembeli;
         
 
-        $admin->penjual()->create([
+        $admin->pembeli()->create([
             "nama_pembeli" => $nama_pembeli,
             "email" => $email,
             "password" => Hash::make($password),

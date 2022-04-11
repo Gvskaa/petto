@@ -31,7 +31,7 @@
                 <h6 class="font-weight-light">Mendaftar itu mudah, Hanya butuh beberapa langkah.</h6>
                 <form class="pt-3"
                     method="POST"
-                    action="{{route ('admin.pembeli.tambah')}}"
+                    action="{{route ('admin.pembeli.submit')}}"
                 >
                 @csrf
                 <div class="form-group">
