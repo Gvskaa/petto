@@ -17,4 +17,12 @@ class Admin extends Authenticatable
         'nama_admin', 'email', 'password'
     ];
 
+    public function penjual(){
+        return $this->hasMany(
+            Penjual::class,
+            "id_admin",
+            "id"
+        );
+    }
+
 }

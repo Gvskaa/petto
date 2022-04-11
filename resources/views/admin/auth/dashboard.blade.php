@@ -161,9 +161,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('admin.penjual.daftar')}}">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Penjual</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.penjual.submit')}}">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Registrasi Penjual</span>
             </a>
           </li>
           <li class="nav-item">
