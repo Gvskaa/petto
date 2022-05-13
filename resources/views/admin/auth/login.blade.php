@@ -34,8 +34,13 @@
                     action="{{route ('admin.login')}}"
                 >
                 @csrf
+                @error('email')
+                    <span style='color: red'>{{$message}}</span><br>
+
+
+                @endError
                 <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
+                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" value="{{old('email')}}">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control form-control-lg" name="password" placeholder="Password">

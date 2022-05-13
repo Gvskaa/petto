@@ -32,7 +32,9 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
         }else{
-            abort(401);
+            return back()->withErrors([
+                'email'=> "Email atau Password Salah WOE",
+            ])->onlyInput('email');
         }
     }
 
@@ -73,7 +75,9 @@ class AuthController extends Controller
 
             return redirect()->route('admin.dashboard');
         }else{
-            abort(401);
+            return back()->withErrors([
+                'email'=> "Email atau Password Salah WOE",
+            ])->onlyInput('email');
         }
     }
 
