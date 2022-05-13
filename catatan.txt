@@ -22,3 +22,7 @@ http response code -> untuk melihat kegunaan kode pada api
 -membuat model
     php artisan make:model nama_model
 
+-belongs to menggunakan assosiate buat menghubungkan
+
+-post menggunakan form sedangkan get menggunakan href
+
