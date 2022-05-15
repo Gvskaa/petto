@@ -27,15 +27,20 @@
                 <div class="brand-logo">
                 <img src="/admin/images/logo.svg" alt="logo">
                 </div>
-                <h4>Hallo!</h4>
+                <h4>Hallo Admin!</h4>
                 <h6 class="font-weight-light">Masuk untuk melanjutkan.</h6>
                 <form class="pt-3"
                     method="POST"
                     action="{{route ('admin.login')}}"
                 >
                 @csrf
+                @error('email')
+                    <span style='color: red'>{{$message}}</span><br>
+
+
+                @endError
                 <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
+                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" value="{{old('email')}}">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control form-control-lg" name="password" placeholder="Password">

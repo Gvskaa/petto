@@ -32,7 +32,9 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
         }else{
-            abort(401);
+            return back()->withErrors([
+                'email'=> "Email atau Password Salah WOE",
+            ])->onlyInput('email');
         }
     }
 
@@ -50,7 +52,7 @@ class AuthController extends Controller
         $nama_toko = $request->nama_toko;
         $status_penjual = $request->status_penjual;
         $tlp_penjual = $request->tlp_penjual;
-        
+
 
 
         Penjual::create([
@@ -73,7 +75,9 @@ class AuthController extends Controller
 
             return redirect()->route('admin.dashboard');
         }else{
-            abort(401);
+            return back()->withErrors([
+                'email'=> "Login Gagal",
+            ])->onlyInput('email');
         }
     }
 

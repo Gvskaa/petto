@@ -14,7 +14,6 @@ class Pembeli extends Authenticatable
     protected $table = 'pembeli';
     protected $foreignId = 'id_admin';
     protected $primarykey = 'id';
-
     protected $guarded = [];
     protected $hidden = ['password_pembeli'];
     protected $fillable = [
