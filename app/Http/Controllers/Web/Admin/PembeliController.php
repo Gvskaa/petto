@@ -11,29 +11,23 @@ class PembeliController extends Controller
 {
     public function halaman_daftar_pembeli(){
         $admin = auth('admin')->user();
-
-       // $daftar_pembeli = $admin->pembeli;
-
         $daftar_pembeli = Pembeli::all();
 
         return view ('admin.pembeli.daftar',[
             "admin" => $admin,
             "daftar_pembeli" => $daftar_pembeli
         ]);
-
     }
 
     public function submit_register_pembeli(Request $request){
-
         $admin = auth('admin')->user();
-
         $nama_pembeli = $request->nama_pembeli;
         $email = $request->email;
         $password = $request->password;
         $jk_pembeli = $request->jk_pembeli;
         $tlp_pembeli = $request->tlp_pembeli;
         $alamat_pembeli = $request->alamat_pembeli;
-        
+
         $admin->pembeli()->create([
             "nama_pembeli" => $nama_pembeli,
             "email" => $email,
@@ -41,9 +35,8 @@ class PembeliController extends Controller
             "jk_pembeli" => $jk_pembeli,
             "tlp_pembeli" => $tlp_pembeli,
             "alamat_pembeli" => $alamat_pembeli
-
         ]);
-            return redirect()->route('admin.pembeli.daftar');
+        return redirect()->route('admin.pembeli.daftar');
     }
 
     public function halaman_register_pembeli(){
@@ -65,7 +58,7 @@ class PembeliController extends Controller
         $password = $request->password;
         $jk_pembeli = $request->jk_pembeli;
         $tlp_pembeli = $request->tlp_pembeli;
-        $alamat_pembeli = $request->alamat_pembeli; 
+        $alamat_pembeli = $request->alamat_pembeli;
 
         $pembeli_model = Pembeli::FindOrFail($pengguna);
 
@@ -76,11 +69,10 @@ class PembeliController extends Controller
             "jk_pembeli" => $jk_pembeli,
             "tlp_pembeli" => $tlp_pembeli,
             "alamat_pembeli" => $alamat_pembeli
-
         ]);
-            $pembeli_model->admin()->associate($admin);
-            $pembeli_model->save();
-            return redirect()->route('admin.pembeli.daftar');
+        $pembeli_model->admin()->associate($admin);
+        $pembeli_model->save();
+        return redirect()->route('admin.pembeli.daftar');
     }
 
     public function hapus_pembeli($pembeli){
@@ -88,6 +80,5 @@ class PembeliController extends Controller
         $pembeli_hapus->delete();
 
         return redirect()->route('admin.pembeli.daftar')->with('success', 'anjay');
-
     }
 }
