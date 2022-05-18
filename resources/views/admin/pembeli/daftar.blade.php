@@ -27,7 +27,8 @@
         <td>{{$pembeli->jk_pembeli}}</td>
         <td>{{$pembeli->tlp_pembeli}}</td>
         <td>{{$pembeli->alamat_pembeli}}</td>
-        <td> Lihat | <a href="{{route('admin.pembeli.ubah', $pembeli->id)}}">ubah</a>|<a href="{{route('admin.pembeli.halaman')}}">Tambah | <form action="{{route('admin.pembeli.hapus', $pembeli->id)}}", method="POST">
+        <td> Lihat | <a href="{{route('admin.pembeli.ubah', $pembeli->id)}}">ubah</a>|<a href="{{route('admin.pembeli.halaman')}}">Tambah </a>| 
+            <form action="{{route('admin.pembeli.hapus', $pembeli->id)}}", method="POST">
             @csrf
             <button type="submit">Hapus</button>
         </form></td>

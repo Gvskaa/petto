@@ -22,6 +22,7 @@ class BuatTabelPembeli extends Migration
             $table->string('jk_pembeli');
             $table->string('tlp_pembeli');
             $table->string('alamat_pembeli');
+            $table->string('foto_pembeli')->nullable();
             $table->timestamps();
         });
     }

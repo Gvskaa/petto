@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Petto | Daftar</title>
+    <title>FORM UBAH</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
     <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
@@ -31,39 +31,27 @@
                 <h6 class="font-weight-light">Mendaftar itu mudah, Hanya butuh beberapa langkah.</h6>
                 <form class="pt-3"
                     method="POST"
-                    action="{{route ('admin.pembeli.submit')}}"
+                    action="{{route ('admin.penjual.sumbit_ubah', $penjual->id)}}"
                 >
                 @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="nama_pembeli" placeholder="Nama">
+                    <input type="text" class="form-control form-control-lg" name="nama_penjual" placeholder="Nama" value={{$penjual->nama_penjual}}>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
+                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" value={{$penjual->email}}>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="jk_pembeli" placeholder="Jenis Kelamin">
-                </div>
-                <!--<div class="form-group">
-                    <select class="form-control form-control-lg" name="jk_pembeli">
-                    <option>Jenis Kelamin</option>
-                    <option>Laki-laki</option>
-                    <option>Perempuan</option>
-                    </select>
-                </div>-->
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="alamat_pembeli" placeholder="Alamat">
+                    <input type="text" class="form-control form-control-lg" name="nama_toko" placeholder="Nama Toko" value={{$penjual->nama_toko}}>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="tlp_pembeli" placeholder="Telepon">
+                    <input type="text" class="form-control form-control-lg" name="status_penjual" placeholder="Status Penjual" value={{$penjual->status_penjual}}>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control form-control-lg"name="password" placeholder="Password">
+                    <input type="text" class="form-control form-control-lg" name="tlp_penjual" placeholder="Telepon" value={{$penjual->tlp_penjual}}>
                 </div>
-                    <div class="form-group">
-                        <b>File Gambar</b><br/>
-                        <input type="file" name="foto_pembeli">
-                    </div>
-                    <input type="submit" value="Upload" class="btn btn-primary">
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-lg"name="password" placeholder="Password" value={{$penjual->password}}>
+                </div>
                 <div class="mb-4">
                     <div class="form-check">
                     <label class="form-check-label text-muted">

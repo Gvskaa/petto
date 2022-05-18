@@ -19,6 +19,25 @@ class AuthController extends Controller
         return view('pembeli.auth.login');
     }
 
+    public function login(Request $request){
+        $email = $request->email;
+        $password = $request->password;
+
+        $identitas = [
+            "email" => $email,
+            "password" => $password
+        ];
+
+        if(Auth::guard('pembeli')->attempt($identitas)){
+            $request->session()->regenerate();
+            return redirect()->route('pembeli.profil');
+        }else{
+            return back()->withErrors([
+                'email'=> "Email atau Password Salah WOE",
+            ])->onlyInput('email');
+        }
+    }
+
 
     public function halaman_profil(){
         $pembeli = Auth::guard('pembeli')->user();
@@ -54,20 +73,17 @@ class AuthController extends Controller
         if(Auth::guard('pembeli')->attempt($identitas)){
             $request -> session()->regenerate();
 
-            return redirect()->route('pembeli.profil');
+            return redirect()->route('pembeli.login.halaman');
         }else{
-            abort(401);
+            return redirect()->route('pembeli.login.halaman');
         }
     }
 
     public function logout(Request $request)
 {
     Auth::logout();
- 
     $request->session()->invalidate();
- 
     $request->session()->regenerateToken();
- 
     return redirect()->route('pembeli.login.halaman');
 }
 }

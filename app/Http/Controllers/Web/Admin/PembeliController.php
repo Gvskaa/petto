@@ -50,14 +50,14 @@ class PembeliController extends Controller
         return view('admin.pembeli.tambah');
     }
 
-    public function form_ubah_pembeli($pengguna){
-        $pembeli_model = Pembeli::FindOrFail($pengguna);
+    public function form_ubah_pembeli($pembeli){
+        $pembeli_model = Pembeli::FindOrFail($pembeli);
         return view('admin.pembeli.ubah', [
             "pembeli" => $pembeli_model
         ]);
     }
 
-    public function ubah_pembeli($pengguna, Request $request){
+    public function ubah_pembeli($pembeli, Request $request){
         $admin = auth('admin')->user();
 
         $nama_pembeli = $request->nama_pembeli;
@@ -67,7 +67,7 @@ class PembeliController extends Controller
         $tlp_pembeli = $request->tlp_pembeli;
         $alamat_pembeli = $request->alamat_pembeli; 
 
-        $pembeli_model = Pembeli::FindOrFail($pengguna);
+        $pembeli_model = Pembeli::FindOrFail($pembeli);
 
         $pembeli_model->update([
             "nama_pembeli" => $nama_pembeli,
@@ -84,10 +84,11 @@ class PembeliController extends Controller
     }
 
     public function hapus_pembeli($pembeli){
-        $pembeli_hapus = Pembeli::Find($pembeli);
+        $pembeli_hapus = Pembeli::FindOrFail($pembeli);
         $pembeli_hapus->delete();
 
         return redirect()->route('admin.pembeli.daftar')->with('success', 'anjay');
 
     }
+
 }
