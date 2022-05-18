@@ -44,27 +44,23 @@
                     <input type="text" class="form-control form-control-lg" name="nama_toko" placeholder="Nama Toko">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="status_penjual" placeholder="Status Penjual">
+                    <select class="form-control form-control-lg" name="status_penjual">
+                    <option>Status Penjual</option>
+                    <option>Aktif</option>
+                    <option>Libur</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="tlp_penjual" placeholder="Telepon">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control form-control-lg"name="password" placeholder="Password">
+                    <input type="text" class="form-control form-control-lg" name="alamat_penjual" placeholder="Alamat">
                 </div>
-                <div class="mb-4">
-                    <div class="form-check">
-                    <label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input">
-                        Saya setuju dengan semua Syarat & Ketentuan
-                    </label>
-                    </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-lg"name="password" placeholder="Password">
                 </div>
                 <div class="mt-3">
                 <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="DAFTAR"/>
-                </div>
-                <div class="text-center mt-4 font-weight-light">
-                    Sudah memiliki akun? <a href="login" class="text-primary">Masuk</a>
                 </div>
                 </form>
             </div>

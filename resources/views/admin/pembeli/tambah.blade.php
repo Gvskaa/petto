@@ -41,15 +41,13 @@
                     <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="jk_pembeli" placeholder="Jenis Kelamin">
-                </div>
-                <!--<div class="form-group">
                     <select class="form-control form-control-lg" name="jk_pembeli">
                     <option>Jenis Kelamin</option>
                     <option>Laki-laki</option>
                     <option>Perempuan</option>
+                    <option>Tidak ingin menyebutkan</option>
                     </select>
-                </div>-->
+                </div>
                 <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="alamat_pembeli" placeholder="Alamat">
                 </div>
@@ -74,9 +72,6 @@
                 </div>
                 <div class="mt-3">
                 <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="DAFTAR"/>
-                </div>
-                <div class="text-center mt-4 font-weight-light">
-                    Sudah memiliki akun? <a href="login" class="text-primary">Masuk</a>
                 </div>
                 </form>
             </div>

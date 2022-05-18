@@ -18,8 +18,8 @@ class BuatTabelPenjual extends Migration
             $table->foreignId('id_admin')->nullable();
             $table->string('nama_toko');
             $table->string('nama_penjual');
-            $table->string('email_penjual');
-            $table->string('password_penjual');
+            $table->string('email');
+            $table->string('password');
             $table->string('status_penjual');
             $table->string('tlp_penjual');
             $table->timestamps();

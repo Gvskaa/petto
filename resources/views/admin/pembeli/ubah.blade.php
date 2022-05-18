@@ -27,10 +27,10 @@
                 <div class="brand-logo">
                     <img src="/admin/images/logos.png" alt="logo">
                 </div>
-                <h4>Baru disini?</h4>
-                <h6 class="font-weight-light">FORM UBAH</h6>
+                <h4>Form Edit Pembeli</h4>
+                <h6 class="font-weight-light">Pastikan data diisi dengan benar!</h6>
                 <form class="pt-3"
-                    method="POST" 
+                    method="POST"
                     action="{{route ('admin.pembeli.submit_ubah', $pembeli->id )}}"
                 >
                 @csrf
@@ -41,15 +41,13 @@
                     <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" value= {{$pembeli->email}}>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="jk_pembeli" placeholder="Jenis Kelamin" value= {{$pembeli->jk_pembeli}}>
-                </div>
-                <!--<div class="form-group">
                     <select class="form-control form-control-lg" name="jk_pembeli">
-                    <option>Jenis Kelamin</option>
+                    <option>{{$pembeli->jk_pembeli}}</option>
                     <option>Laki-laki</option>
                     <option>Perempuan</option>
+                    <option>Tidak ingin menyebutkan</option>
                     </select>
-                </div>-->
+                </div>
                 <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="alamat_pembeli" placeholder="Alamat" value= {{$pembeli->alamat_pembeli}}>
                 </div>

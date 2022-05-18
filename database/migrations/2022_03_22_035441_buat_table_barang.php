@@ -17,7 +17,7 @@ class BuatTableBarang extends Migration
             $table->id();
             $table->foreignId('id_penjual')->nullable();
             $table->integer('harga_barang');
-            $table->string('foto_barang');
+            $table->string('foto_barang')->nullable();
             $table->string('nama_barang');
             $table->String('keterangan');
             $table->integer('stok_barang');
