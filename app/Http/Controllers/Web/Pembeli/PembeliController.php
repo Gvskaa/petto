@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Pembeli;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pembeli;
+use App\Models\Barang;
 
 class PembeliController extends Controller
 {
@@ -46,5 +47,19 @@ class PembeliController extends Controller
         );
 
     }
+
+    public function halaman_daftar_barang(){
+        return view('pembeli.barang.daftar_barang');
+    }
+
+    public function daftar_barang(){
+        $pembeli = auth('pembeli')->user();
+        $daftar_barang = Barang::all();
+        return view('pembeli.barang.daftar_barang',[
+            "pembeli"=> $pembeli,
+            "daftar_barang" => $daftar_barang
+        ]);
+    }
+
     
 }

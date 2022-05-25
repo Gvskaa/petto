@@ -74,11 +74,15 @@
                                         <button type="submit" class="btn btn-inverse-primary btn-sm">
                                             <a href="{{route('admin.penjual.barang.ubah', $barang->id)}}" style="text-decoration:none">Ubah</a>
                                         </button>
-                                        <button type="submit" class="btn btn-inverse-danger btn-sm">
-                                            Hapus
+                                        
                                             <form action="{{route('admin.penjual.barang.hapus', $barang->id)}}", method="POST">
                                                 @csrf
-                                            </button>
+                                                <button type="submit" class="btn btn-inverse-danger btn-sm">
+                                                    Hapus
+                                                </button>
+                                            </form>
+                                                
+                                            
                                     </td>
                                 </tr>
                             @endforeach

@@ -42,4 +42,12 @@ class Admin extends Authenticatable
         );
     }
 
+    public function barang(){
+        return $this->hasMany(
+            Barang::class,
+            "id_penjual",
+            "id"
+        );
+    }
+
 }

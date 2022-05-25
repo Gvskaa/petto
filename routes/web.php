@@ -7,7 +7,9 @@ use App\Http\Controllers\Web\Pembeli\AuthController as PembeliAuthController;
 use App\Http\Controllers\Web\Admin\PembeliController;
 use App\Http\Controllers\Web\Admin\PenjualController;
 use App\Http\Controllers\Web\Admin\ArtikelController;
+use App\Http\Controllers\Web\Pembeli\PembeliController as PembeliPembeliController;
 use App\Http\Controllers\Web\Penjual\BarangController;
+use App\Http\Controllers\Web\Pembeli\BeliController;
 use App\Models\Pembeli;
 
 
@@ -40,7 +42,6 @@ Route::middleware(['auth:admin'])->group(function(){
     Route::get('/admin/pembeli/{pembeli}/ubah', [PembeliController::class, "form_ubah_pembeli"])->name('admin.pembeli.ubah');
     Route::post('/admin/pembeli/{pembeli}/ubah', [PembeliController::class, "ubah_pembeli"])->name('admin.pembeli.submit_ubah');
 
-    Route::post('/admin/pembeli/{pembeli}/hapuspembeli', [PembeliController::class, "hapus_pembeli"])->name('admin.pembeli.hapus');
     Route::post('/admin/pembeli/{pembeli}/hapus', [PembeliController::class, "hapus_pembeli"])->name('admin.pembeli.hapus');
     
     Route::get('/admin/artikel/daftar', [ArtikelController::class, "halaman_daftar_artikel"])->name('admin.artikel.daftar');
@@ -60,15 +61,18 @@ Route::middleware(['auth:admin'])->group(function(){
 });
 
 Route::middleware(['auth:pembeli'])->group(function(){
-Route::get('/pembeli/profil', [AuthController::class, "halaman_profil"])->name('pembeli.profil');
-Route::get('/pembeli/logout', [AuthController::class, "logout"])->name('pembeli.logout');
+Route::get('/pembeli/profil', [PembeliAuthController::class, "halaman_profil"])->name('pembeli.profil');
+Route::get('/pembeli/logout', [PembeliAuthController::class, "logout"])->name('pembeli.logout');
+Route::get('/pembeli/daftar_barang', [PembeliPembeliController::class, "daftar_barang"])->name('pembeli.barang.halaman');
+Route::get('/pembeli/{barang}/detail_barang', [BeliController::class, "detail_barang"])->name('pembeli.barang.detail');
+Route::post('/pembeli/{barang}/pesan_barang', [BeliController::class, "pesan_barang"])->name('pembeli.barang.pesan');
 });
 
 
-Route::get('/pembeli/login',[AuthController::class, "halaman_login"])->name('pembeli.login.halaman');
-Route::post('/pembeli/login',[AuthController::class, "login"])->name('pembeli.login');
-Route::get('/pembeli/register', [AuthController::class, "halaman_register"])->name('pembeli.register.halaman');
-Route::post('/pembeli/register',[AuthController::class, "submit_register"])->name('pembeli.register.submit');
+Route::get('/pembeli/login',[PembeliAuthController::class, "halaman_login"])->name('pembeli.login.halaman');
+Route::post('/pembeli/login',[PembeliAuthController::class, "login"])->name('pembeli.login');
+Route::get('/pembeli/register', [PembeliAuthController::class, "halaman_register"])->name('pembeli.register.halaman');
+Route::post('/pembeli/register',[PembeliAuthController::class, "submit_register"])->name('pembeli.register.submit');
 
 Route::get('/penjual/login',[PenjualAuthController::class, "halaman_login_penjual"])->name('penjual.login.halaman');
 Route::post('/penjual/login',[PenjualAuthController::class, "login"])->name('penjual.login');
