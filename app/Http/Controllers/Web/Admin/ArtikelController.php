@@ -21,13 +21,26 @@ class ArtikelController extends Controller
     }
 
     public function submit_register_artikel(Request $request){
+        $validated = $request->validate([
+            'judul_artikel' => 'required',
+            'isi_artikel' => 'required',
+        ], [
+            "required" => "Kolom :attribute wajib diisi"
+        ]);
+
         $admin = auth('admin')->user();
         $judul_artikel =  $request->judul_artikel;
         $isi_artikel = $request->isi_artikel;
 
+        if ($request->hasFile('gambar_artikel')) {
+            $lokasi_gambar_artikel = $request->gambar_artikel->store('public');
+        }
+
         $admin->artikel()->create([
+            "gambar_artikel" =>$lokasi_gambar_artikel,
             "judul_artikel" => $judul_artikel,
             "isi_artikel" => $isi_artikel,
+
         ]);
         return redirect()->route('admin.artikel.daftar');
     }
@@ -46,12 +59,14 @@ class ArtikelController extends Controller
     public function ubah_artikel($artikel, Request $request){
         $admin = auth('admin')->user();
 
+        $gambar_artikel = $request->gambar_artikel;
         $judul_artikel =  $request->judul_artikel;
         $isi_artikel = $request->isi_artikel;
 
         $artikel_model = artikel::FindOrFail($artikel);
 
         $artikel_model->update([
+            "gambar_artikel"=> $gambar_artikel,
             "judul_artikel" => $judul_artikel,
             "isi_artikel" => $isi_artikel,
         ]);

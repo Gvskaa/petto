@@ -28,14 +28,25 @@
                 <h6 class="font-weight-light">Tambah artikel untuk pengguna</h6>
                 <form class="pt-3"
                     method="POST"
-                    action="{{route ('admin.artikel.submit')}}"
+                    action="{{route ('admin.artikel.submit')}} " enctype="multipart/form-data"
                 >
                     @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" name="judul_artikel" placeholder="Judul">
+                        <label for="judul_artikel">Judul Artikel</label>
+                        <input type="text" class="form-control form-control-lg" name="judul_artikel">
+                        @error('judul_artikel')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" name="isi_artikel" placeholder="Artikel">
+                        <label for="isi_artikel">Isi Artikel</label>
+                        <textarea class="form-control form-control-lg" id="isi_artikel" name="isi_artikel" rows="6" cols="40" ></textarea>
+                        @error('isi_artikel')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-control form-control-lg" name="gambar_artikel" placeholder="Isi Artikel">
                     </div>
                     <div class="mt-3">
                         <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="Buat"/>
