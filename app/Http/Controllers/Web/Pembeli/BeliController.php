@@ -30,11 +30,17 @@ class BeliController extends Controller
         $pembelian->bukti_pembayaran='';
 
         $pembelian->save();
-        return 'Ok'; //harusnya redirecta ke halaman daftar pemesanan yang pernah dibuat 
-
-
+        return redirect()->route('pembeli.barang.daftarpembelian'); //harusnya redirecta ke halaman daftar pemesanan yang pernah dibuat 
     }
 
-    
+    public function daftar_pemesanan(){
+        $pembeli = auth('pembeli')->user();
+        $daftar_pembelian = $pembeli->pembelian;
+        return view('pembeli.barang.daftarpemesanan', [
+            "pembeli" => $pembeli,
+            "daftar_pembelian" =>$daftar_pembelian
+        ]);
+    }
+
 
 }

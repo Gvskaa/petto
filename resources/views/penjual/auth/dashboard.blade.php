@@ -161,9 +161,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a href="{{route('penjual.pembeli.daftarpesanan')}}" class="nav-link">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Data Penjual</span>
+              <span class="menu-title">Data Pemesanan</span>
             </a>
           </li>
           <li class="nav-item">

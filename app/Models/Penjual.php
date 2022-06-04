@@ -25,4 +25,24 @@ class Penjual extends Authenticatable
             "id"
         );
     }
+
+    public function barang(){
+        return $this->hasMany(
+            Barang::class,
+            "id_barang",
+            "id"
+        );
+    }
+
+
+    public function pembelian(){
+       return $this->hasManyThrough(
+           Pembelian::class,
+           Barang::class,
+           'id_penjual',
+           'id_barang',
+           'id',
+           'id'
+       );
+    }
 }

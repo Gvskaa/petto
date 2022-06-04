@@ -27,4 +27,20 @@ class Pembeli extends Authenticatable
             "id"
         );
     }
+
+    public function pembelian(){
+        return $this->hasMany(
+            Pembelian::class,
+            'id_pembeli',
+            'id'
+        );
+    }
+
+    public function penjual(){
+        return $this->belongsTo(
+            Penjual::class,
+            'id_penjual',
+            'id'
+        );
+    }
 }

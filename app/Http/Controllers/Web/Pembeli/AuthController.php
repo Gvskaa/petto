@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+
+    public function halaman_index(){
+        return view('pembeli.auth.index');
+    }
     public function halaman_register(){
         return view('pembeli.auth.register');
     }

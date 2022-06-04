@@ -24,4 +24,12 @@ class Barang extends Model
             "id"
         );
     }
+
+    public function penjual(){
+        return $this->belongsTo(
+            Penjual::class,
+            'id_penjual',
+            'id'
+        );
+    }
 }

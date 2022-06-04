@@ -10,6 +10,7 @@ use App\Http\Controllers\Web\Admin\ArtikelController;
 use App\Http\Controllers\Web\Pembeli\PembeliController as PembeliPembeliController;
 use App\Http\Controllers\Web\Penjual\BarangController;
 use App\Http\Controllers\Web\Pembeli\BeliController;
+use App\Http\Controllers\Web\Penjual\PembelianController;
 use App\Models\Pembeli;
 
 
@@ -66,6 +67,8 @@ Route::get('/pembeli/logout', [PembeliAuthController::class, "logout"])->name('p
 Route::get('/pembeli/daftar_barang', [PembeliPembeliController::class, "daftar_barang"])->name('pembeli.barang.halaman');
 Route::get('/pembeli/{barang}/detail_barang', [BeliController::class, "detail_barang"])->name('pembeli.barang.detail');
 Route::post('/pembeli/{barang}/pesan_barang', [BeliController::class, "pesan_barang"])->name('pembeli.barang.pesan');
+Route::get('/pembeli/daftarpembelian', [BeliController:: class, 'daftar_pemesanan'])->name('pembeli.barang.daftarpembelian');
+Route::get('/pembeli/index', [PembeliAuthController::class, "halaman_index"])->name('pembeli.index');
 });
 
 
@@ -80,6 +83,7 @@ Route::post('/penjual/login',[PenjualAuthController::class, "login"])->name('pen
 Route::middleware(['auth:penjual'])->group(function(){
     Route::get('/penjual/dashboard', [PenjualAuthController::class, "halaman_dashboard_penjual"])->name('penjual.dashboard');
     Route::get('/penjual/logout', [PenjualAuthController::class, "logout"])->name('penjual.logout');
+    Route::get('/penjual/pembeli/daftarpemesanan', [PembelianController::class, "daftar_pemesanan"])->name('penjual.pembeli.daftarpesanan');
 });
 
 

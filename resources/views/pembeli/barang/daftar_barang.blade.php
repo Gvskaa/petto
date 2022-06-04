@@ -51,16 +51,16 @@
                                     {{ $barang->foto_barang }}
                                 </td>
                                 <td>
-                                    {{ $barang->keterangan }}
+                                    {{ $barang->status_barang  }}
                                 </td>
                                 <td>
-                                    {{ $barang->status_barang }}
-                                </td>
-                                <td>
-                                    {{ $barang->stok_barang }}
+                                    {{ $barang->stok_barang}}
                                 </td>
                                 <td>
                                     {{ $barang->kategori_barang }}
+                                </td>
+                                <td>
+                                    {{ $barang->keterangan }}
                                 </td>
                                 <td>
                                     <a href="{{route('pembeli.barang.detail', $barang->id)}}">Beli</a> 

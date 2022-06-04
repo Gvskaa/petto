@@ -5,6 +5,8 @@
     <input name="email_pembeli" value= "{{$pembeli->email}}"type="text"></input>
     <a href="{{route('pembeli.logout')}}">Logout</a>
 	<a href="{{route('pembeli.barang.halaman')}}">Daftar Barang</a>
+	<a href="{{route('pembeli.barang.daftarpembelian')}}">Daftar Pembelian</a>
+	<a href="{{route('pembeli.index')}}">Index<a>
 </form>
 
 
