@@ -60,7 +60,7 @@
                                 <form action="{{route('admin.artikel.hapus', $artikel->id)}}", method="POST">
                                 <button type="submit" class="btn btn-inverse-danger btn-sm">
                                     Hapus
-                                </button>
+                                </button></form>
                             </td>
                         </tr>
                         @endforeach
