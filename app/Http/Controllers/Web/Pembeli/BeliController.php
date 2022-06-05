@@ -12,7 +12,7 @@ class BeliController extends Controller
 {
     public function detail_barang($barang){
         $barang_model = Barang::findOrFail($barang);
-        return view('pembeli.barang.detail_barang', [
+        return view('pembeli.barang.detail', [
             "barang" => $barang_model
         ]);
     }

@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Home</title>	
-    <link rel="shortcut icon" type="image/x-icon" href="pembeli/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/pembeli/images/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/pembeli/css/animate.css">
@@ -167,7 +167,7 @@
 									<a href="shop.html" class="link-term mercado-item-title">Shop</a>
 								</li>
 								<li class="menu-item">
-									<a href="cart.html" class="link-term mercado-item-title">Cart</a>
+									<a href="{{route('pembeli.chart')}}" class="link-term mercado-item-title">Daftar Pesanan</a>
 								</li>
 								<li class="menu-item">
 									<a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
@@ -392,7 +392,7 @@
 				<h3 class="title-box">Latest Products</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="" width="1170" height="240" alt=""></figure>
+						<figure><img src="/pembeli/images/home-1-banner-2.jpg" width="1170" height="240" alt=""></figure>
 					</a>
 				</div>
 				<div class="wrap-products">
@@ -400,25 +400,26 @@
 						<div class="tab-contents">
 							<div class="tab-content-item active" id="digital_1a">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
-
                                    
+									@foreach($daftar_barang as $barang)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" name="T-Shirt Raw Hem Organic Boro Constrast Denim">
+											<a href="#" name="T-Shirt Raw Hem Organic Boro Constrast Denim">
 												<figure><img src="/pembeli/images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">
 												<span class="flash-item new-label">Baru</span>
 											</div>
 											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
+												<a href="{{route('pembeli.barang.detail', $barang->id)}}" class="function-link">Detail Barang</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+											<a href="#" class="product-name"><span>{{$barang->nama_barang}}</span></a>
+											<div class="wrap-price"><span class="product-price">{{$barang->harga_barang}}</span></div>
 										</div>
 									</div>
+									@endforeach
 {{-- 
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">

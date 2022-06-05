@@ -9,13 +9,20 @@ use App\Models\Pembeli;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Models\Barang;
 
 class AuthController extends Controller
 {
 
     public function halaman_index(){
-        return view('pembeli.auth.index');
+        $pembeli = auth('pembeli')->user();
+        $daftar_barang = Barang::all();
+        return view('pembeli.auth.index',[
+            "pembeli"=> $pembeli,
+            "daftar_barang" => $daftar_barang
+        ]);
     }
+
     public function halaman_register(){
         return view('pembeli.auth.register');
     }
@@ -90,4 +97,8 @@ class AuthController extends Controller
     $request->session()->regenerateToken();
     return redirect()->route('pembeli.login.halaman');
 }
+
+    public function halaman_chart(){
+        return view('pembeli.auth.chart');
+    }
 }

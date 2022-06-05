@@ -65,10 +65,13 @@ Route::middleware(['auth:pembeli'])->group(function(){
 Route::get('/pembeli/profil', [PembeliAuthController::class, "halaman_profil"])->name('pembeli.profil');
 Route::get('/pembeli/logout', [PembeliAuthController::class, "logout"])->name('pembeli.logout');
 Route::get('/pembeli/daftar_barang', [PembeliPembeliController::class, "daftar_barang"])->name('pembeli.barang.halaman');
-Route::get('/pembeli/{barang}/detail_barang', [BeliController::class, "detail_barang"])->name('pembeli.barang.detail');
+// Route::get('/pembeli/{barang}/detail_barang', [BeliController::class, "detail_barang"])->name('pembeli.barang.detail');
 Route::post('/pembeli/{barang}/pesan_barang', [BeliController::class, "pesan_barang"])->name('pembeli.barang.pesan');
 Route::get('/pembeli/daftarpembelian', [BeliController:: class, 'daftar_pemesanan'])->name('pembeli.barang.daftarpembelian');
 Route::get('/pembeli/index', [PembeliAuthController::class, "halaman_index"])->name('pembeli.index');
+Route::get('/pembeli/chart', [PembeliAuthController::class, "halaman_chart"])->name('pembeli.chart');
+Route::get('/pembeli/{barang}/detail', [BeliController::class, "detail_barang"])->name('pembeli.barang.detail');
+
 });
 
 
