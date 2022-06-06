@@ -42,6 +42,37 @@ return [
             'visibility' => 'public',
         ],
 
+        //lokasi menyimpan foto barang
+        'lokasi_foto_barang' => [
+            'driver' => 'local',
+            'root' => storage_path('app/foto_barang'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'lokasi_ubah_fotobarang' => [
+            'driver' => 'local',
+            'root' => storage_path('app/ubah_fotobarang'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+
+        //lokasi menyimpan gambar artikel
+        'lokasi_gambar_artikel' => [
+            'driver' => 'local',
+            'root' => storage_path('app/gambar_artikel'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'lokasi_ubah_gambarartikel' => [
+            'driver' => 'local',
+            'root' => storage_path('app/ubah_gambarartikel'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

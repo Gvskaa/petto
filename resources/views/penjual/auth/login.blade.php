@@ -27,7 +27,7 @@
                 <div class="brand-logo">
                 <img src="/admin/images/logo.svg" alt="logo">
                 </div>
-                <h4>Hallo!</h4>
+                <h4>Hallo PETTO!</h4>
                 <h6 class="font-weight-light">Masuk untuk melanjutkan.</h6>
                 <form class="pt-3"
                     method="POST"

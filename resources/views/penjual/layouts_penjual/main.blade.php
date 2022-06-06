@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Petto | Admin</title>
+    <title>Petto | Penjual</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
     <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
@@ -105,7 +105,7 @@
                             <img src="/admin/images/faces/default.png" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item" href="{{ route('admin.logout') }}">
+                            <a class="dropdown-item" href="{{ route('penjual.logout') }}">
                                 <i class="ti-power-off text-primary"></i>
                                 Logout
                             </a>
@@ -163,33 +163,15 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.dashboard') }}">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.artikel.daftar') }}">
-                            <i class="icon-paper menu-icon"></i>
-                            <span class="menu-title">Data Artikel</span>
-                        </a>
-                    </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.penjual.barang.daftar') }}">
+                        <a class="nav-link" href="{{ route('penjual.barang.daftar') }}">
                             <i class="icon-book menu-icon"></i>
                             <span class="menu-title">Data Barang</span>
                         </a>
-                    </li> --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.penjual.daftar') }}">
-                        <i class="icon-head menu-icon"></i>
-                        <span class="menu-title">Data Penjual</span>
-                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.pembeli.daftar') }}">
-                            <i class="icon-head menu-icon"></i>
-                            <span class="menu-title">Data Pembeli</span>
+                        <a class="nav-link" href="{{ route('penjual.pembeli.daftarpesanan') }}">
+                            <i class="icon-book menu-icon"></i>
+                            <span class="menu-title">Daftar Data Pemesanan</span>
                         </a>
                     </li>
                 </ul>

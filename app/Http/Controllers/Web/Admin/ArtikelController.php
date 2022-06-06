@@ -33,7 +33,7 @@ class ArtikelController extends Controller
         $isi_artikel = $request->isi_artikel;
 
         if ($request->hasFile('gambar_artikel')) {
-            $lokasi_gambar_artikel = $request->gambar_artikel->store('public');
+            $lokasi_gambar_artikel = $request->gambar_artikel->store('lokasi_gambar_artikel');
         }
 
         $admin->artikel()->create([
@@ -59,14 +59,17 @@ class ArtikelController extends Controller
     public function ubah_artikel($artikel, Request $request){
         $admin = auth('admin')->user();
 
-        $gambar_artikel = $request->gambar_artikel;
+        //variabel gambar artikel dihapus
         $judul_artikel =  $request->judul_artikel;
         $isi_artikel = $request->isi_artikel;
 
         $artikel_model = artikel::FindOrFail($artikel);
 
+        if($request->hasFile('gambar_artikel')){
+            $lokasi_ubah_gambarartikel = $request->gambar_artikel->store('lokasi_ubah_gambarartikel');
+        }
         $artikel_model->update([
-            "gambar_artikel"=> $gambar_artikel,
+            "gambar_artikel"=> $lokasi_ubah_gambarartikel,
             "judul_artikel" => $judul_artikel,
             "isi_artikel" => $isi_artikel,
         ]);

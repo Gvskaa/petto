@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -82,4 +82,4 @@
     <script src="/admin/js/todolist.js"></script>
     <!-- endinject -->
 </body>
-</html>
+</html> --}}

@@ -1,4 +1,4 @@
-@extends('admin.layouts.main')
+{{-- @extends('admin.layouts.main')
 
 @section('container')
     <div class="col-lg-12 grid-margin stretch-card">
@@ -74,15 +74,15 @@
                                         <button type="submit" class="btn btn-inverse-primary btn-sm">
                                             <a href="{{route('admin.penjual.barang.ubah', $barang->id)}}" style="text-decoration:none">Ubah</a>
                                         </button>
-                                        
-                                            <form action="{{route('admin.penjual.barang.hapus', $barang->id)}}", method="POST">
+
+                                            <form action="{{route('penjual.barang.hapus', $barang->id)}}", method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-inverse-danger btn-sm">
                                                     Hapus
                                                 </button>
                                             </form>
-                                                
-                                            
+
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -91,4 +91,4 @@
                 </div>
             </div>
         </div>
-@endsection
+@endsection --}}
