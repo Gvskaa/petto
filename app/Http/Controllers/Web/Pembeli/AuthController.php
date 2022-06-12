@@ -102,7 +102,53 @@ class AuthController extends Controller
 }
 
     public function halaman_chart(){
-        return view('pembeli.auth.chart');
+        $pembeli = auth('pembeli')->user();
+        $daftar_pembelian = $pembeli->pembelian;
+        
+        return view('pembeli.auth.chart', [
+            "pembeli" => $pembeli,
+            "daftar_pembelian" =>$daftar_pembelian
+        ]);
+    }
+
+    public function daftar_pemesanan(){
+        $pembeli = auth('pembeli')->user();
+        $daftar_pembelian = $pembeli->pembelian;
+
+        return view('pembeli.auth.chart', [
+            "pembeli" => $pembeli,
+            "daftar_pembelian" =>$daftar_pembelian
+        ]);
+    }
+
+    public function data_pembeli($pembeli, Request $request){
+        $pembeli = auth('pembeli')->user();
+
+        $nama_pembeli = $request->nama_pembeli;
+        $email = $request->email;
+        $password = $request->password;
+        $jk_pembeli = $request->jk_pembeli;
+        $tlp_pembeli = $request->tlp_pembeli;
+        $alamat_pembeli = $request->alamat_pembeli;
+
+        $pembeli_model = Pembeli::FindOrFail($pembeli);
+
+        $pembeli_model->update([
+            "nama_pembeli" => $nama_pembeli,
+            "email" => $email,
+            "password" => Hash::make($password),
+            "jk_pembeli" => $jk_pembeli,
+            "tlp_pembeli" => $tlp_pembeli,
+            "alamat_pembeli" => $alamat_pembeli
+        ]);
+        $pembeli_model->pembelian()->associate($pembeli);
+        $pembeli_model->save();
+        return redirect()->route('');
+    
+    }
+
+    public function profil_pembeli(){
+        return view('pembeli.auth.profilPembeli');
     }
 
 }

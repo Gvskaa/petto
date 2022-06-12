@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\Admin;
+use App\Models\Pembelian;
 use Illuminate\Support\Facades\Hash;
 
 class BarangController extends Controller
@@ -98,5 +99,14 @@ class BarangController extends Controller
         $barang_hapus->delete();
 
         return redirect()->route('penjual.barang.daftar')->with('success', 'anjay');
+    }
+
+    public function konfirmasi($pembelian){
+        $pembelian = Pembelian::findOrFail($pembelian);
+
+        $pembelian->update([
+            'status_pembayaran' => 'Barang di Kirim'
+        ]);
+        return redirect()->route('penjual.pembeli.daftarpesanan');
     }
 }

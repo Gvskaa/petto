@@ -42,6 +42,12 @@ return [
             'visibility' => 'public',
         ],
 
+        'bukti_pembayaran' => [
+            'driver' => 'local',
+            'root' => storage_path('app/bukti_pembayaran'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
         //lokasi menyimpan foto barang
         'lokasi_foto_barang' => [
             'driver' => 'local',
@@ -99,10 +105,10 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-
         //untuk menampilkan gambar artikel
         public_path('lokasi_gambar_artikel') => storage_path('app/public/lokasi_gambar_artikel'),
 
+        public_path('bukti_pembayaran') => storage_path('app/bukti_pembayaran')
     ],
 
-];
+    ];
