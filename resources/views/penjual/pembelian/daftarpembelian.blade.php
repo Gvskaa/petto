@@ -19,6 +19,9 @@
                                 Total Harga
                             </th>
                             <th>
+                                Bukti Pembayaran
+                            </th>
+                            <th>
                                 Status Pembayaran
                             </th>
                             <th>
@@ -42,7 +45,16 @@
                                     {{ $pemesanan->barang->harga_barang * $pemesanan->jumlah_barang }}
                                 </td>
                                 <td>
+                                    <img src="{{asset($pemesanan->barang->foto_barang)}}" width="50" height="50">
+                                </td>
+                                <td>
                                     {{ $pemesanan->status_pembayaran}}
+                                </td>
+                                <td>
+                                    <form action="{{route('penjual.konfirmasi',$pemesanan->id)}}" method="POST" >
+                                        @csrf
+                                        <button>Konfirmasi</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

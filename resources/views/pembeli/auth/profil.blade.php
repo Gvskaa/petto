@@ -7,6 +7,7 @@
 	<a href="{{route('pembeli.barang.halaman')}}">Daftar Barang</a>
 	<a href="{{route('pembeli.barang.daftarpembelian')}}">Daftar Pembelian</a>
 	<a href="{{route('pembeli.index')}}">Index<a>
+	<a href="{{route('pembeli.profilPembeli')}}">Profil pengguna</a>
 </form>
 
 

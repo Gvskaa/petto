@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Detail Barang</title>
+	<title>Belanjaan</title>
 	<link rel="shortcut icon" type="image/x-icon" href="/pembeli/images/logo.png">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
@@ -12,12 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="/pembeli/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/pembeli/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/pembeli/css/owl.carousel.min.css">
-	<link rel="stylesheet" type="text/css" href="/pembeli/css/flexslider.css">
 	<link rel="stylesheet" type="text/css" href="/pembeli/css/chosen.min.css">
 	<link rel="stylesheet" type="text/css" href="/pembeli/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/pembeli/css/color-01.css">
 </head>
-<body class=" detail page ">
+<body class="home-page home-01 ">
 
 	<!-- mobile menu -->
     <div class="mercado-clone-wrap">
@@ -42,7 +41,8 @@
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item" ><a title="Register or Login" href="pembeli.logout">Logout</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.logout')}}">Logout</a></li>
+                                <li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.profil')}}">Profil</a></li>
 							</ul>
 						</div>
 					</div>
@@ -89,182 +89,125 @@
 	</header>
 
 	<!--main area-->
-	<main id="main" class="main-site">
+	<main id="main" class="main-site left-sidebar">
 
 		<div class="container">
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="{{route('pembeli.index')}}" class="link">Beranda</a></li>
-					<li class="item-link"><span>Detail Barang</span></li>
+					<li class="item-link"><a href="{{route('pembeli.index')}}" class="link">home</a></li>
+					<li class="item-link"><span>Shop</span></li>
 				</ul>
 			</div>
 			<div class="row">
 
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
-					<div class="wrap-product-detail">
-						<div class="detail-media">
-							<div class="product-gallery">
-							  <ul class="#">
-							    <li data-thumb="/pembeli/images/products/digital_18.jpg">
-							    	<img src="/pembeli/images/products/digital_18.jpg" alt="product thumbnail" />
-							    </li>
-							  </ul>
-							</div>
-						</div>
-						<div class="detail-info">
-							{{-- <div class="product-rating">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <a href="#" class="count-review">(05 review)</a>
-                            </div> --}}
-                            <h2 class="product-name">{{$barang->nama_barang}}</h2>
-                            <div class="short-desc">
-                                <ul>{{$barang->keterangan}}</ul>
-                            </div>
-                            {{-- <div class="wrap-social">
-                            	<a class="link-socail" href="#"><img src="/pembeli/images/social-list.png" alt=""></a>
-                            </div> --}}
-                            <div class="wrap-price"><span class="product-price">Rp. {{$barang->harga_barang}}</span></div>
-                            <div class="stock-info in-stock">
-                                <p class="availability">Stok Barang: <b>Tersedia</b></p>
-                            </div>
-                            <form action="{{route('pembeli.barang.pesan', $barang->id)}}" method="POST">
-                                @csrf
-                            <div class="quantity">
-                            	<span>Jumlah barang:</span>
-								<div class="quantity-input">
-									<input type="text" name="jumlah_barang" value="1" data-max="120" pattern="[0-9]*" >
-									
-									<a class="btn btn-reduce" href="#"></a>
-									<a class="btn btn-increase" href="#"></a>
+
+					<div class="banner-shop">
+						<a href="#" class="banner-link">
+							<figure><img src="/pembeli/images/shop-banner.jpg" alt=""></figure>
+						</a>
+					</div>
+
+					<div class="wrap-shop-control">
+
+						<h1 class="shop-title">Belanja di PETTO</h1>
+
+					</div><!--end wrap shop control-->
+
+					<div class="row">
+
+						<ul class="product-list grid-products equal-container">
+                            @foreach($daftar_barang as $barang)
+							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+								<div class="product product-style-3 equal-elem ">
+									<div class="product-thumnail">
+										<a href="{{route('pembeli.barang.detail', $barang->id)}}" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+											<figure><img src="/pembeli/images/products/digital_20.jpg" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										</a>
+									</div>
+									<div class="product-info">
+										<a href="#" class="product-name"><span>{{$barang->nama_barang}}</span></a>
+										<div class="wrap-price"><span class="product-price">{{$barang->harga_barang}}</span></div>
+										<a href="#" class="btn add-to-cart">Keranjang</a>
+									</div>
 								</div>
-							</div>
-							<div class="wrap-butons">
-								<button class="btn add-to-cart">Beli</button>
-							</div>
-                            </form >
-						</div>
-						<div class="advance-info">
-							<div class="tab-control normal">
-								<a href="#description" class="tab-control-item active">description</a>
-							</div>
-							<div class="tab-contents">
-								<div class="tab-content-item active" id="description">
-                                    {{$barang->keterangan}}
+							</li>
+                            @endforeach
+							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+								<div class="product product-style-3 equal-elem ">
+									<div class="product-thumnail">
+										<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+											<figure><img src="/pembeli/images/products/digital_22.jpg" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										</a>
+									</div>
+									<div class="product-info">
+										<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+										<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										<a href="#" class="btn add-to-cart">Add To Cart</a>
+									</div>
 								</div>
-							</div>
-						</div>
+							</li>
+
+						</ul>
+
+					</div>
+
+					<div class="wrap-pagination-info">
+						<ul class="page-numbers">
+							<li><span class="page-number-item current" >1</span></li>
+							<li><a class="page-number-item" href="#" >2</a></li>
+							<li><a class="page-number-item" href="#" >3</a></li>
+							<li><a class="page-number-item next-link" href="#" >Next</a></li>
+						</ul>
 					</div>
 				</div><!--end main products area-->
 
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
-					<div class="widget widget-our-services ">
+					<div class="widget mercado-widget categories-widget">
+						<h2 class="widget-title">All Categories</h2>
 						<div class="widget-content">
-							<ul class="our-services">
-
-								<li class="service">
-									<a class="link-to-service" href="#">
-										<i class="fa fa-truck" aria-hidden="true"></i>
-										<div class="right-content">
-											<b class="title">Free Shipping</b>
-											<span class="subtitle">On Oder Over $99</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
-										</div>
-									</a>
+							<ul class="list-category">
+								<li class="category-item has-child-cate">
+									<a href="#" class="cate-link">Fashion & Accessories</a>
+									{{-- <span class="toggle-control">+</span>
+									<ul class="sub-cate">
+										<li class="category-item"><a href="#" class="cate-link">Batteries (22)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Headsets (16)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Screen (28)</a></li>
+									</ul> --}}
 								</li>
-
-								<li class="service">
-									<a class="link-to-service" href="#">
-										<i class="fa fa-gift" aria-hidden="true"></i>
-										<div class="right-content">
-											<b class="title">Special Offer</b>
-											<span class="subtitle">Get a gift!</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
-										</div>
-									</a>
+								<li class="category-item has-child-cate">
+									<a href="#" class="cate-link">Furnitures & Home Decors</a>
+									{{-- <span class="toggle-control">+</span>
+									<ul class="sub-cate">
+										<li class="category-item"><a href="#" class="cate-link">Batteries (22)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Headsets (16)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Screen (28)</a></li>
+									</ul> --}}
 								</li>
-
-								<li class="service">
-									<a class="link-to-service" href="#">
-										<i class="fa fa-reply" aria-hidden="true"></i>
-										<div class="right-content">
-											<b class="title">Order Return</b>
-											<span class="subtitle">Return within 7 days</span>
-											<p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
-										</div>
-									</a>
+								<li class="category-item has-child-cate">
+									<a href="#" class="cate-link">Digital & Electronics</a>
+									{{-- <span class="toggle-control">+</span>
+									<ul class="sub-cate">
+										<li class="category-item"><a href="#" class="cate-link">Batteries (22)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Headsets (16)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Screen (28)</a></li>
+									</ul> --}}
+								</li>
+								<li class="category-item">
+									<a href="#" class="cate-link">Tools & Equipments</a>
+								</li>
+								<li class="category-item">
+									<a href="#" class="cate-link">Kid’s Toys</a>
+								</li>
+								<li class="category-item">
+									<a href="#" class="cate-link">Organics & Spa</a>
 								</li>
 							</ul>
 						</div>
 					</div><!-- Categories widget-->
 
-					{{-- <div class="widget mercado-widget widget-product">
-						<h2 class="widget-title">Popular Products</h2>
-						<div class="widget-content">
-							<ul class="products">
-								<li class="product-item">
-									<div class="product product-widget-style">
-										<div class="thumbnnail">
-											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="/pembeli/images/products/digital_01.jpg" alt=""></figure>
-											</a>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-											<div class="wrap-price"><span class="product-price">$168.00</span></div>
-										</div>
-									</div>
-								</li>
-
-								<li class="product-item">
-									<div class="product product-widget-style">
-										<div class="thumbnnail">
-											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="/pembeli/images/products/digital_17.jpg" alt=""></figure>
-											</a>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-											<div class="wrap-price"><span class="product-price">$168.00</span></div>
-										</div>
-									</div>
-								</li>
-
-								<li class="product-item">
-									<div class="product product-widget-style">
-										<div class="thumbnnail">
-											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="/pembeli/images/products/digital_18.jpg" alt=""></figure>
-											</a>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-											<div class="wrap-price"><span class="product-price">$168.00</span></div>
-										</div>
-									</div>
-								</li>
-
-								<li class="product-item">
-									<div class="product product-widget-style">
-										<div class="thumbnnail">
-											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="/pembeli/images/products/digital_20.jpg" alt=""></figure>
-											</a>
-										</div>
-										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker...</span></a>
-											<div class="wrap-price"><span class="product-price">$168.00</span></div>
-										</div>
-									</div>
-								</li>
-
-							</ul>
-						</div>
-					</div> --}}
 
 				</div><!--end sitebar-->
 
@@ -481,15 +424,14 @@
 			</div>
 		</div>
 	</footer>
+
 	<script src="/pembeli/js/jquery-1.12.4.minb8ff.js?ver=1.12.4"></script>
 	<script src="/pembeli/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4"></script>
 	<script src="/pembeli/js/bootstrap.min.js"></script>
-	<script src="/pembeli/js/jquery.flexslider.js"></script>
 	<script src="/pembeli/js/chosen.jquery.min.js"></script>
 	<script src="/pembeli/js/owl.carousel.min.js"></script>
 	<script src="/pembeli/js/jquery.countdown.min.js"></script>
 	<script src="/pembeli/js/jquery.sticky.js"></script>
 	<script src="/pembeli/js/functions.js"></script>
-	<!--footer area-->
 </body>
 </html>

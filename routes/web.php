@@ -15,7 +15,7 @@ use App\Models\Pembeli;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/admin/login',[AdminAuthController::class, "halaman_login_admin"])->name('admin.login.halaman');
@@ -69,8 +69,14 @@ Route::get('/pembeli/daftar_barang', [PembeliPembeliController::class, "daftar_b
 Route::post('/pembeli/{barang}/pesan_barang', [BeliController::class, "pesan_barang"])->name('pembeli.barang.pesan');
 Route::get('/pembeli/daftarpembelian', [BeliController:: class, 'daftar_pemesanan'])->name('pembeli.barang.daftarpembelian');
 Route::get('/pembeli/index', [PembeliAuthController::class, "halaman_index"])->name('pembeli.index');
-Route::get('/pembeli/chart', [PembeliAuthController::class, "halaman_chart"])->name('pembeli.chart');
+Route::get('/pembeli/chart', [PembeliAuthController::class, "daftar_pemesanan"])->name('pembeli.chart');
 Route::get('/pembeli/{barang}/detail', [BeliController::class, "detail_barang"])->name('pembeli.barang.detail');
+Route::post('/pembeli/pemesanan/{pemesanan}/hapus',[BeliController::class, "hapus_pesanan"])->name('pembeli.pesan.hapus');
+Route::post('/pembeli/{barang}/checkout', [BeliController::class, "checkout"])->name('pembeli.checkout');
+Route::get('/pembeli/pemesanan/{pemesanan}/checkout', [BeliController::class, "formulir_alamat"])->name('pembeli.formulir_alamat');
+Route::post('/pembeli/pemesanan/{pemesanan}/sumbit/checkout', [BeliController::class, "submit_formulir_pemesanan"])->name('pembeli.formulir.pemesanan');
+Route::get('/pembeli.barang/shop', [BeliController::class, 'halaman_shop'])->name('pembeli.shop');
+Route::get('/pembeli.profilPengguna', [PembeliAuthController::class, 'profil_pembeli'])->name('pembeli.profilPembeli');
 
 });
 
@@ -87,6 +93,7 @@ Route::middleware(['auth:penjual'])->group(function(){
     Route::get('/penjual/dashboard', [PenjualAuthController::class, "halaman_dashboard_penjual"])->name('penjual.dashboard');
     Route::get('/penjual/logout', [PenjualAuthController::class, "logout"])->name('penjual.logout');
     Route::get('/penjual/pembeli/daftarpemesanan', [PembelianController::class, "daftar_pemesanan"])->name('penjual.pembeli.daftarpesanan');
+    Route::post('/penjual/{pembelian}/konfirmasi', [BarangController::class, "konfirmasi"])->name('penjual.konfirmasi');
 });
 
 

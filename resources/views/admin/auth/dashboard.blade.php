@@ -56,7 +56,7 @@
                 <div class="card card-tale">
                     <div class="card-body">
                         <p class="mb-4">Total Penjual</p>
-                        <p class="fs-30 mb-2">20</p>
+                        <p class="fs-30 mb-2">{{$jumlah_penjual}}</p>
                         <p>10.00% (30 hari)</p>
                     </div>
                 </div>

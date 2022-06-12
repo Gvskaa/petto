@@ -1,573 +1,1423 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Petto | Admin</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
-  <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="/admin/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" type="text/css" href="/admin/js/select.dataTables.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="/admin/css/vertical-layout-light/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="/admin/images/favicn.png" /> !
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>	
+    <link rel="shortcut icon" type="image/x-icon" href="/pembeli/images/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/pembeli/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="/pembeli/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/pembeli/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/pembeli/css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="/pembeli/css/chosen.min.css">
+	<link rel="stylesheet" type="text/css" href="/pembeli/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/pembeli/css/color-01.css">
 </head>
-<body>
-  <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.blade.php"><img src="/admin/images/logos.png" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.blade.php"><img src="/admin/images/logo-mini.svg" alt="logo"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <i class="icon-search"></i>
-                </span>
-              </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-            </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="icon-bell mx-0"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-success">
-                    <i class="ti-info-alt mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-warning">
-                    <i class="ti-settings mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-info">
-                    <i class="ti-user mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="/admin/images/faces/default.png" alt="profile"/>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
-              </a>
-              <a class="dropdown-item">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
-            </div>
-          </li>
-
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>
-        </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
-      <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="ti-settings"></i></div>
-        <div id="theme-settings" class="settings-panel">
-          <i class="settings-close ti-close"></i>
-          <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
-          <p class="settings-heading mt-2">HEADER SKINS</p>
-          <div class="color-tiles mx-0 px-4">
-            <div class="tiles success"></div>
-            <div class="tiles warning"></div>
-            <div class="tiles danger"></div>
-            <div class="tiles info"></div>
-            <div class="tiles dark"></div>
-            <div class="tiles default"></div>
-          </div>
+<body class="home-page home-01 ">
+{{-- 
+	<!-- mobile menu -->
+    <div class="mercado-clone-wrap">
+        <div class="mercado-panels-actions-wrap">
+            <a class="mercado-close-btn mercado-close-panels" href="#">x</a>
         </div>
-      </div>
-      <div id="right-sidebar" class="settings-panel">
-        <div class="tab-content" id="setting-content">
-          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
-            <div class="add-items d-flex px-3 mb-0">
-              <form class="form w-100">
-              </form>
-            </div>
-          </div>
-          <!-- To do section tab ends -->
+        <div class="mercado-panels"></div>
+    </div> --}}
 
-          <!-- chat tab ends -->
-        </div>
-      </div>
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Data Penjual</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Data Pembeli</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Admin</h3>
-                  <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
-                </div>
-                <div class="col-12 col-xl-4">
-                  <div class="justify-content-end d-flex">
-                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
-                      <a class="dropdown-item" href="#">January - March</a>
-                      <a class="dropdown-item" href="#">March - June</a>
-                      <a class="dropdown-item" href="#">June - August</a>
-                      <a class="dropdown-item" href="#">August - November</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card tale-bg">
-                <div class="card-people mt-auto">
-                  <img src="/admin/images/dashboard/people.svg" alt="people">
-                  <div class="weather-info">
-                    <div class="d-flex">
-                      <div>
-                        <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
-                      </div>
-                      <div class="ml-2">
-                        <h4 class="location font-weight-normal">Bangalore</h4>
-                        <h6 class="font-weight-normal">India</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-tale">
-                    <div class="card-body">
-                      <p class="mb-4">Today’s Bookings</p>
-                      <p class="fs-30 mb-2">4006</p>
-                      <p>10.00% (30 days)</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-dark-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Total Bookings</p>
-                      <p class="fs-30 mb-2">61344</p>
-                      <p>22.00% (30 days)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                  <div class="card card-light-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Number of Meetings</p>
-                      <p class="fs-30 mb-2">34040</p>
-                      <p>2.00% (30 days)</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
-                    <div class="card-body">
-                      <p class="mb-4">Number of Clients</p>
-                      <p class="fs-30 mb-2">47033</p>
-                      <p>0.22% (30 days)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title">Order Details</p>
-                  <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
-                  <div class="d-flex flex-wrap mb-5">
-                    <div class="mr-5 mt-3">
-                      <p class="text-muted">Order value</p>
-                      <h3 class="text-primary fs-30 font-weight-medium">12.3k</h3>
-                    </div>
-                    <div class="mr-5 mt-3">
-                      <p class="text-muted">Orders</p>
-                      <h3 class="text-primary fs-30 font-weight-medium">14k</h3>
-                    </div>
-                    <div class="mr-5 mt-3">
-                      <p class="text-muted">Users</p>
-                      <h3 class="text-primary fs-30 font-weight-medium">71.56%</h3>
-                    </div>
-                    <div class="mt-3">
-                      <p class="text-muted">Downloads</p>
-                      <h3 class="text-primary fs-30 font-weight-medium">34040</h3>
-                    </div> 
-                  </div>
-                  <canvas id="order-chart"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between">
-                    <p class="card-title">Sales Report</p>
-                    <a href="#" class="text-info">View all</a>
-                  </div>
-                  <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
-                  <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
-                  <canvas id="sales-chart"></canvas>
-                </div>
-              </div>
-            </div>
+	 <!--header-->
+	<header id="header" class="header header-style-1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="topbar-menu-area">
+					<div class="container">
+						<div class="topbar-menu left-menu">
+							<ul>
+								<li class="menu-item" >
+									<a title="Telephone: 0831-4831-6196" href="#" ><span class="icon label-before fa fa-mobile"></span>Telepon: 0831-4831-6196</a>
+								</li>
+							</ul>
+						</div>
+						<div class="topbar-menu right-menu">
+							<ul>
+								<li class="menu-item" ><a title="Register or Login" href="login.html">Login</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="register.html">Register</a></li>
+								{{-- <li class="menu-item lang-menu menu-item-has-children parent">
+									<a title="English" href="#"><span class="img label-before"><img src="/pembeli/images/lang-en.png" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<ul class="submenu lang" >
+										<li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="/pembeli/images/lang-hun.png" alt="lang-hun"></span>Hungary</a></li>
+										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="/pembeli/images/lang-ger.png" alt="lang-ger" ></span>German</a></li>
+										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="/pembeli/images/lang-fra.png" alt="lang-fre"></span>French</a></li>
+										<li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="/pembeli/images/lang-can.png" alt="lang-can"></span>Canada</a></li>
+									</ul>
+								</li> --}}
+								{{-- <li class="menu-item menu-item-has-children parent" >
+									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<ul class="submenu curency" >
+										<li class="menu-item" >
+											<a title="Pound (GBP)" href="#">Pound (GBP)</a>
+										</li>
+										<li class="menu-item" >
+											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
+										</li>
+										<li class="menu-item" >
+											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
+										</li>
+									</ul>
+								</li> --}}
+							</ul>
+						</div>
+					</div>
+				</div>
 
-          <div class="col-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Form Register</h4>
-                  <p class="card-description">
-                    Form Register
-                  </p>
-                  <form class="forms-sample">
-                    <div class="form-group">
-                      <label for="exampleInputName1">Nama</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Gender</label>
-                        <select class="form-control" id="exampleSelectGender">
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputCity1">Alamat</label>
-                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="Alamat">
-                    </div>
-                    <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                        </span>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
-                  </form>
-                </div>
-              </div>
-            </div>
+				<div class="container">
+					<div class="mid-section main-info-area">
 
-          <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Table User</h4>
-                  <p class="card-description">
-                    Add class <code>.table-striped</code>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>
-                            User
-                          </th>
-                          <th>
-                            First name
-                          </th>
-                          <th>
-                            Progress
-                          </th>
-                          <th>
-                            Amount
-                          </th>
-                          <th>
-                            Deadline
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../images/faces/face1.jpg" alt="image"/>
-                          </td>
-                          <td>
-                            Herman Beck
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../images/faces/face2.jpg" alt="image"/>
-                          </td>
-                          <td>
-                            Messsy Adam
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            $245.30
-                          </td>
-                          <td>
-                            July 1, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../images/faces/face3.jpg" alt="image"/>
-                          </td>
-                          <td>
-                            John Richards
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            $138.00
-                          </td>
-                          <td>
-                            Apr 12, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../images/faces/face4.jpg" alt="image"/>
-                          </td>
-                          <td>
-                            Peter Meggik
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../images/faces/face5.jpg" alt="image"/>
-                          </td>
-                          <td>
-                            Edward
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            $ 160.25
-                          </td>
-                          <td>
-                            May 03, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../images/faces/face6.jpg" alt="image"/>
-                          </td>
-                          <td>
-                            John Doe
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            $ 123.21
-                          </td>
-                          <td>
-                            April 05, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../images/faces/face7.jpg" alt="image"/>
-                          </td>
-                          <td>
-                            Henry Tom
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            $ 150.00
-                          </td>
-                          <td>
-                            June 16, 2015
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          </div>
-        </div>
-        </div>
-        </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
-          </div>
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span> 
-          </div>
-        </footer> 
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>   
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
+						<div class="wrap-logo-top left-section">
+							<a href="index.html" class="link-to-home"><img src=" " alt="mercado"></a>
+						</div>
 
-  <!-- plugins:js -->
-  <script src="/admin/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="/admin/vendors/chart.js/Chart.min.js"></script>
-  <script src="/admin/vendors/datatables.net/jquery.dataTables.js"></script>
-  <script src="/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script src="/admin/js/dataTables.select.min.js"></script>
+					</div>
+				</div>
 
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="/admin/js/off-canvas.js"></script>
-  <script src="/admin/js/hoverable-collapse.js"></script>
-  <script src="/admin/js/template.js"></script>
-  <script src="/admin/js/settings.js"></script>
-  <script src="/admin/js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="/admin/js/dashboard.js"></script>
-  <script src="/admin/js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom js for this page-->
+				<div class="nav-section header-sticky">
+					<div class="header-nav-section">
+					</div>
+
+					<div class="primary-nav-section">
+						<div class="container">
+							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
+								<li class="menu-item home-icon">
+									<a href="{{route('pembeli.index')}}" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
+								</li>
+								<li class="menu-item">
+									<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+								</li>
+								<li class="menu-item">
+									<a href="shop.html" class="link-term mercado-item-title">Shop</a>
+								</li>
+								<li class="menu-item">
+									<a href="{{route('pembeli.chart')}}" class="link-term mercado-item-title">Daftar Pesanan</a>
+								</li>
+								<li class="menu-item">
+									<a href="" class="link-term mercado-item-title">Checkout</a>
+								</li>
+								<li class="menu-item">
+									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+								</li>																	
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main id="main">
+		<div class="container">
+
+			<!--MAIN SLIDE-->
+			<div class="wrap-main-slide">
+				<div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
+					<div class="item-slide">
+						<img src="/pembeli/images/main-slider-1-1.jpg" alt="" class="img-slide">
+						<div class="slide-info slide-1">
+							<h2 class="f-title">Kid Smart <b>Watches</b></h2>
+							<span class="subtitle">Compra todos tus productos Smart por internet.</span>
+							<p class="sale-info">Only price: <span class="price">$59.99</span></p>
+							<a href="#" class="btn-link">Shop Now</a>
+						</div>
+					</div>
+					<div class="item-slide">
+						<img src="/pembeli/images/main-slider-1-2.jpg" alt="" class="img-slide">
+						<div class="slide-info slide-2">
+							<h2 class="f-title">Extra 25% Off</h2>
+							<span class="f-subtitle">On online payments</span>
+							<p class="discount-code">Use Code: #FA6868</p>
+							<h4 class="s-title">Get Free</h4>
+							<p class="s-subtitle">TRansparent Bra Straps</p>
+						</div>
+					</div>
+					<div class="item-slide">
+						<img src="/pembeli/images/main-slider-1-3.jpg" alt="" class="img-slide">
+						<div class="slide-info slide-3">
+							<h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
+							<span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
+							<p class="sale-info">Stating at: <b class="price">$225.00</b></p>
+							<a href="#" class="btn-link">Shop Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--BANNER-->
+			<div class="wrap-banner style-twin-default">
+				<div class="banner-item">
+					<a href="#" class="link-banner banner-effect-1">
+						<figure><img src="/pembeli/images/home-1-banner-1.jpg" alt="" width="580" height="190"></figure>
+					</a>
+				</div>
+				<div class="banner-item">
+					<a href="#" class="link-banner banner-effect-1">
+						<figure><img src="/pembeli/images/home-1-banner-2.jpg" alt="" width="580" height="190"></figure>
+					</a>
+				</div>
+			</div>
+
+			{{-- <!--On Sale-->
+			<div class="wrap-show-advance-info-box style-1 has-countdown">
+				<h3 class="title-box">On Sale</h3>
+				<div class="wrap-countdown mercado-countdown" data-expire="2020/12/12 12:34:56"></div>
+				<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+
+					<div class="product product-style-2 equal-elem ">
+						<div class="product-thumnail">
+							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+								<figure><img src="/pembeli/images/products/tools_equipment_7.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+							</a>
+							<div class="group-flash">
+								<span class="flash-item sale-label">sale</span>
+							</div>
+							<div class="wrap-btn">
+								<a href="#" class="function-link">quick view</a>
+							</div>
+						</div>
+						<div class="product-info">
+							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+							<div class="wrap-price"><span class="product-price">$250.00</span></div>
+						</div>
+					</div>
+
+					<div class="product product-style-2 equal-elem ">
+						<div class="product-thumnail">
+							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+								<figure><img src="/pembeli/images/products/digital_18.jpg" width="800" height="800" alt=""></figure>
+							</a>
+							<div class="group-flash">
+								<span class="flash-item sale-label">sale</span>
+							</div>
+							<div class="wrap-btn">
+								<a href="#" class="function-link">quick view</a>
+							</div>
+						</div>
+						<div class="product-info">
+							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+							<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+						</div>
+					</div>
+
+					<div class="product product-style-2 equal-elem ">
+						<div class="product-thumnail">
+							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+								<figure><img src="/pembeli/images/products/fashion_08.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+							</a>
+							<div class="group-flash">
+								<span class="flash-item sale-label">sale</span>
+							</div>
+							<div class="wrap-btn">
+								<a href="#" class="function-link">quick view</a>
+							</div>
+						</div>
+						<div class="product-info">
+							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+							<div class="wrap-price"><span class="product-price">$250.00</span></div>
+						</div>
+					</div>
+
+					<div class="product product-style-2 equal-elem ">
+						<div class="product-thumnail">
+							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+								<figure><img src="/pembeli/images/products/digital_17.jpg" width="800" height="800" alt=""></figure>
+							</a>
+							<div class="group-flash">
+								<span class="flash-item sale-label">sale</span>
+							</div>
+							<div class="wrap-btn">
+								<a href="#" class="function-link">quick view</a>
+							</div>
+						</div>
+						<div class="product-info">
+							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+							<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+						</div>
+					</div>
+
+					<div class="product product-style-2 equal-elem ">
+						<div class="product-thumnail">
+							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+								<figure><img src="/pembeli/images/products/tools_equipment_3.jpg" width="800" height="800" alt=""></figure>
+							</a>
+							<div class="group-flash">
+								<span class="flash-item sale-label">sale</span>
+							</div>
+							<div class="wrap-btn">
+								<a href="#" class="function-link">quick view</a>
+							</div>
+						</div>
+						<div class="product-info">
+							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+							<div class="wrap-price"><span class="product-price">$250.00</span></div>
+						</div>
+					</div>
+
+					<div class="product product-style-2 equal-elem ">
+						<div class="product-thumnail">
+							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+								<figure><img src="/pembeli/images/products/fashion_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+							</a>
+							<div class="group-flash">
+								<span class="flash-item sale-label">sale</span>
+							</div>
+							<div class="wrap-btn">
+								<a href="#" class="function-link">quick view</a>
+							</div>
+						</div>
+						<div class="product-info">
+							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+							<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+						</div>
+					</div>
+
+					<div class="product product-style-2 equal-elem ">
+						<div class="product-thumnail">
+							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+								<figure><img src="/pembeli/images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+							</a>
+							<div class="group-flash">
+								<span class="flash-item sale-label">sale</span>
+							</div>
+							<div class="wrap-btn">
+								<a href="#" class="function-link">quick view</a>
+							</div>
+						</div>
+						<div class="product-info">
+							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+							<div class="wrap-price"><span class="product-price">$250.00</span></div>
+						</div>
+					</div>
+
+					<div class="product product-style-2 equal-elem ">
+						<div class="product-thumnail">
+							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+								<figure><img src="/pembeli/images/products/kidtoy_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+							</a>
+							<div class="group-flash">
+								<span class="flash-item sale-label">sale</span>
+							</div>
+							<div class="wrap-btn">
+								<a href="#" class="function-link">quick view</a>
+							</div>
+						</div>
+						<div class="product-info">
+							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+							<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+						</div>
+					</div>
+
+				</div>
+			</div> --}}
+
+			<!--Latest Products-->
+			<div class="wrap-show-advance-info-box style-1">
+				<h3 class="title-box">Latest Products</h3>
+				<div class="wrap-top-banner">
+					<a href="#" class="link-banner banner-effect-2">
+						<figure><img src="/pembeli/images/home-1-banner-2.jpg" width="1170" height="240" alt=""></figure>
+					</a>
+				</div>
+				<div class="wrap-products">
+					<div class="wrap-product-tab tab-style-1">						
+						<div class="tab-contents">
+							<div class="tab-content-item active" id="digital_1a">
+								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
+                                   
+									{{-- @foreach($daftar_barang as $barang)
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="{{route('pembeli.barang.detail', $barang->id)}}" name="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">Baru</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="{{route('pembeli.barang.detail', $barang->id)}}" class="function-link">Detail Barang</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>{{$barang->nama_barang}}</span></a>
+											<div class="wrap-price"><span class="product-price">{{$barang->harga_barang}}</span></div>
+										</div>
+									</div>
+									@endforeach --}}
+{{-- 
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/digital_17.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div> --}}
+{{-- 
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/digital_15.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div> --}}
+{{-- 
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/digital_01.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div> --}}
+{{-- 
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/digital_21.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div> --}}
+{{-- 
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/digital_03.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div> --}}
+{{-- 
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div> --}}
+{{-- 
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/digital_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div> --}}
+
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Product Categories-->
+			<div class="wrap-show-advance-info-box style-1">
+				<h3 class="title-box">Product Categories</h3>
+				<div class="wrap-top-banner">
+					<a href="#" class="link-banner banner-effect-2">
+						<figure><img src="/pembeli/images/fashion-accesories-banner.jpg" width="1170" height="240" alt=""></figure>
+					</a>
+				</div>
+				<div class="wrap-products">
+					<div class="wrap-product-tab tab-style-1">
+						<div class="tab-control">
+							<a href="#fashion_1a" class="tab-control-item active">Smartphone</a>
+							<a href="#fashion_1b" class="tab-control-item">Watch</a>
+							<a href="#fashion_1c" class="tab-control-item">Laptop</a>
+							<a href="#fashion_1d" class="tab-control-item">Tablet</a>
+						</div>
+						<div class="tab-contents">
+
+							<div class="tab-content-item active" id="fashion_1a">
+								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_01.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Lois Caron LCS-4027 Analog Watch - For Men</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_02.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Business Men Leather Laptop Tote Bags Man Crossbody </span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_09.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Alberto Torresi Borgo Yellow Shoes - Alberto Torresi</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+									<div class="product-thumnail">
+										<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+											<figure><img src="/pembeli/images/products/fashion_03.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										</a>
+										<div class="group-flash">
+											<span class="flash-item new-label">new</span>
+											<span class="flash-item sale-label">sale</span>
+										</div>
+										<div class="wrap-btn">
+											<a href="#" class="function-link">quick view</a>
+										</div>
+									</div>
+									<div class="product-info">
+										<a href="#" class="product-name"><span>Alberto Torresi Borgo Yellow Shoes - Alberto Torresi</span></a>
+										<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+									</div>
+								</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_07.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_08.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_06.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="tab-content-item" id="fashion_1b">
+								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_03.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_07.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_08.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_09.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_02.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_08.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="tab-content-item" id="fashion_1c">
+								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_02.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_03.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_06.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_07.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_08.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_09.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="tab-content-item" id="fashion_1d">
+								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quick view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="product-rating">
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="product-rating">
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_03.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="product-rating">
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_02.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="product-rating">
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_01.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="product-rating">
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_06.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item sale-label">sale</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="product-rating">
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_08.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item new-label">new</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="product-rating">
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										</div>
+									</div>
+
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="/pembeli/images/products/fashion_09.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+											<div class="group-flash">
+												<span class="flash-item bestseller-label">Bestseller</span>
+											</div>
+											<div class="wrap-btn">
+												<a href="#" class="function-link">quic view</a>
+											</div>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+											<div class="product-rating">
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+												<i class="fa fa-star" aria-hidden="true"></i>
+											</div>
+											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+
+		</div>
+
+	</main>
+
+	<footer id="footer">
+		<div class="wrap-footer-content footer-style-1">
+
+			<div class="wrap-function-info">
+				<div class="container">
+					<ul>
+						<li class="fc-info-item">
+							<i class="fa fa-truck" aria-hidden="true"></i>
+							<div class="wrap-left-info">
+								<h4 class="fc-name">Free Shipping</h4>
+								<p class="fc-desc">Free On Oder Over $99</p>
+							</div>
+
+						</li>
+						<li class="fc-info-item">
+							<i class="fa fa-recycle" aria-hidden="true"></i>
+							<div class="wrap-left-info">
+								<h4 class="fc-name">Guarantee</h4>
+								<p class="fc-desc">30 Days Money Back</p>
+							</div>
+
+						</li>
+						<li class="fc-info-item">
+							<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+							<div class="wrap-left-info">
+								<h4 class="fc-name">Safe Payment</h4>
+								<p class="fc-desc">Safe your online payment</p>
+							</div>
+
+						</li>
+						<li class="fc-info-item">
+							<i class="fa fa-life-ring" aria-hidden="true"></i>
+							<div class="wrap-left-info">
+								<h4 class="fc-name">Online Suport</h4>
+								<p class="fc-desc">We Have Support 24/7</p>
+							</div>
+
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--End function info-->
+
+			<div class="main-footer-content">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+							<div class="wrap-footer-item">
+								<h3 class="item-header">Contact Details</h3>
+								<div class="item-content">
+									<div class="wrap-contact-detail">
+										<ul>
+											<li>
+												<i class="fa fa-map-marker" aria-hidden="true"></i>
+												<p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United State USA</p>
+											</li>
+											<li>
+												<i class="fa fa-phone" aria-hidden="true"></i>
+												<p class="contact-txt">(+123) 456 789 - (+123) 666 888</p>
+											</li>
+											<li>
+												<i class="fa fa-envelope" aria-hidden="true"></i>
+												<p class="contact-txt">Contact@yourcompany.com</p>
+											</li>											
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+
+							<div class="wrap-footer-item">
+								<h3 class="item-header">Hot Line</h3>
+								<div class="item-content">
+									<div class="wrap-hotline-footer">
+										<span class="desc">Call Us toll Free</span>
+										<b class="phone-number">(+123) 456 789 - (+123) 666 888</b>
+									</div>
+								</div>
+							</div>
+
+							<div class="wrap-footer-item footer-item-second">
+								<h3 class="item-header">Sign up for newsletter</h3>
+								<div class="item-content">
+									<div class="wrap-newletter-footer">
+										<form action="#" class="frm-newletter" id="frm-newletter">
+											<input type="email" class="input-email" name="email" value="" placeholder="Enter your email address">
+											<button class="btn-submit">Subscribe</button>
+										</form>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
+							<div class="row">
+								<div class="wrap-footer-item twin-item">
+									<h3 class="item-header">My Account</h3>
+									<div class="item-content">
+										<div class="wrap-vertical-nav">
+											<ul>
+												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="wrap-footer-item twin-item">
+									<h3 class="item-header">Infomation</h3>
+									<div class="item-content">
+										<div class="wrap-vertical-nav">
+											<ul>
+												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row">
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+							<div class="wrap-footer-item">
+								<h3 class="item-header">We Using Safe Payments:</h3>
+								<div class="item-content">
+									<div class="wrap-list-item wrap-gallery">
+										<img src="/pembeli/images/payment.png" style="max-width: 260px;">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+							<div class="wrap-footer-item">
+								<h3 class="item-header">Social network</h3>
+								<div class="item-content">
+									<div class="wrap-list-item social-network">
+										<ul>
+											<li><a href="#" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+							<div class="wrap-footer-item">
+								<h3 class="item-header">Dowload App</h3>
+								<div class="item-content">
+									<div class="wrap-list-item apps-list">
+										<ul>
+											<li><a href="#" class="link-to-item" title="our application on apple store"><figure><img src="/pembeli/images/brands/apple-store.png" alt="apple store" width="128" height="36"></figure></a></li>
+											<li><a href="#" class="link-to-item" title="our application on google play store"><figure><img src="/pembeli/images/brands/google-play-store.png" alt="google play store" width="128" height="36"></figure></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="wrap-back-link">
+					<div class="container">
+						<div class="back-link-box">
+							<h3 class="backlink-title">Quick Links</h3>
+							<div class="back-link-row">
+								<ul class="list-back-link" >
+									<li><span class="row-title">Mobiles:</span></li>
+									<li><a href="#" class="redirect-back-link" title="mobile">Mobiles</a></li>
+									<li><a href="#" class="redirect-back-link" title="yphones">YPhones</a></li>
+									<li><a href="#" class="redirect-back-link" title="Gianee Mobiles GL">Gianee Mobiles GL</a></li>
+									<li><a href="#" class="redirect-back-link" title="Mobiles Karbonn">Mobiles Karbonn</a></li>
+									<li><a href="#" class="redirect-back-link" title="Mobiles Viva">Mobiles Viva</a></li>
+									<li><a href="#" class="redirect-back-link" title="Mobiles Intex">Mobiles Intex</a></li>
+									<li><a href="#" class="redirect-back-link" title="Mobiles Micrumex">Mobiles Micrumex</a></li>
+									<li><a href="#" class="redirect-back-link" title="Mobiles Bsus">Mobiles Bsus</a></li>
+									<li><a href="#" class="redirect-back-link" title="Mobiles Samsyng">Mobiles Samsyng</a></li>
+									<li><a href="#" class="redirect-back-link" title="Mobiles Lenova">Mobiles Lenova</a></li>
+								</ul>
+
+								<ul class="list-back-link" >
+									<li><span class="row-title">Tablets:</span></li>
+									<li><a href="#" class="redirect-back-link" title="Plesc YPads">Plesc YPads</a></li>
+									<li><a href="#" class="redirect-back-link" title="Samsyng Tablets" >Samsyng Tablets</a></li>
+									<li><a href="#" class="redirect-back-link" title="Qindows Tablets" >Qindows Tablets</a></li>
+									<li><a href="#" class="redirect-back-link" title="Calling Tablets" >Calling Tablets</a></li>
+									<li><a href="#" class="redirect-back-link" title="Micrumex Tablets" >Micrumex Tablets</a></li>
+									<li><a href="#" class="redirect-back-link" title="Lenova Tablets Bsus" >Lenova Tablets Bsus</a></li>
+									<li><a href="#" class="redirect-back-link" title="Tablets iBall" >Tablets iBall</a></li>
+									<li><a href="#" class="redirect-back-link" title="Tablets Swipe" >Tablets Swipe</a></li>
+									<li><a href="#" class="redirect-back-link" title="Tablets TVs, Audio" >Tablets TVs, Audio</a></li>
+								</ul>
+
+								<ul class="list-back-link" >
+									<li><span class="row-title">Fashion:</span></li>
+									<li><a href="#" class="redirect-back-link" title="Sarees Silk" >Sarees Silk</a></li>
+									<li><a href="#" class="redirect-back-link" title="sarees Salwar" >sarees Salwar</a></li>
+									<li><a href="#" class="redirect-back-link" title="Suits Lehengas" >Suits Lehengas</a></li>
+									<li><a href="#" class="redirect-back-link" title="Biba Jewellery" >Biba Jewellery</a></li>
+									<li><a href="#" class="redirect-back-link" title="Rings Earrings" >Rings Earrings</a></li>
+									<li><a href="#" class="redirect-back-link" title="Diamond Rings" >Diamond Rings</a></li>
+									<li><a href="#" class="redirect-back-link" title="Loose Diamond Shoes" >Loose Diamond Shoes</a></li>
+									<li><a href="#" class="redirect-back-link" title="BootsMen Watches" >BootsMen Watches</a></li>
+									<li><a href="#" class="redirect-back-link" title="Women Watches" >Women Watches</a></li>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="coppy-right-box">
+				<div class="container">
+					<div class="coppy-right-item item-left">
+						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+					</div>
+					<div class="coppy-right-item item-right">
+						<div class="wrap-nav horizontal-nav">
+							<ul>
+								<li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>								
+								<li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a></li>
+								<li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms & Conditions</a></li>
+								<li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a></li>								
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="/pembeli/js/jquery-1.12.4.minb8ff.js?ver=1.12.4"></script>
+	<script src="/pembeli/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4"></script>
+	<script src="/pembeli/js/bootstrap.min.js"></script>
+	<script src="/pembeli/js/jquery.flexslider.js"></script>
+	<script src="/pembeli/js/chosen.jquery.min.js"></script>
+	<script src="/pembeli/js/owl.carousel.min.js"></script>
+	<script src="/pembeli/js/jquery.countdown.min.js"></script>
+	<script src="/pembeli/js/jquery.sticky.js"></script>
+	<script src="/pembeli/js/functions.js"></script>
 </body>
-
 </html>
-

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use App\Models\Penjual;
 
 class AuthController extends Controller
 {
@@ -35,8 +36,10 @@ class AuthController extends Controller
 
     public function halaman_dashboard_admin(){
         $admin = Auth::guard('admin')->user();
+        $jumlah_penjual = Penjual::count();
         return view('admin.auth.dashboard', [
-            'admin' => $admin
+            'admin' => $admin,
+            'jumlah_penjual' => $jumlah_penjual
         ]);
     }
 

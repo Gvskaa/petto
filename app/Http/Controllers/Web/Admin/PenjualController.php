@@ -95,4 +95,5 @@ class PenjualController extends Controller
         return redirect()->route('admin.penjual.daftar')->with('success', 'anjay');
     }
 
+
 }
