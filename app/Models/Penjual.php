@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable; 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Penjual extends Authenticatable 
+class Penjual extends Authenticatable
 {
 
     use HasFactory, HasApiTokens;
@@ -15,7 +15,7 @@ class Penjual extends Authenticatable
     protected $foreignId = 'id_admin';
     protected $primarykey = 'id';
     protected $fillable = [
-        'nama_penjual', 'email', 'password', 'nama_toko', 'tlp_penjual', 'status_penjual', 
+        'nama_penjual', 'email', 'password', 'nama_toko', 'tlp_penjual', 'status_penjual',
     ];
 
     public function admin(){
@@ -29,7 +29,7 @@ class Penjual extends Authenticatable
     public function barang(){
         return $this->hasMany(
             Barang::class,
-            "id_barang",
+            "id_penjual",
             "id"
         );
     }

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Barang;
+use App\Models\Artikel;
 
 class AuthController extends Controller
 {
@@ -17,9 +18,11 @@ class AuthController extends Controller
     public function halaman_index(){
         $pembeli = auth('pembeli')->user();
         $daftar_barang = Barang::all();
+        $daftar_artikel = Artikel::all();
         return view('pembeli.auth.index',[
             "pembeli"=> $pembeli,
-            "daftar_barang" => $daftar_barang
+            "daftar_barang" => $daftar_barang,
+            "daftar_artikel" => $daftar_artikel
         ]);
     }
 
@@ -41,10 +44,10 @@ class AuthController extends Controller
 
         if(Auth::guard('pembeli')->attempt($identitas)){
             $request->session()->regenerate();
-            return redirect()->route('pembeli.profil');
+            return redirect()->route('pembeli.index');
         }else{
             return back()->withErrors([
-                'email'=> "Email atau Password Salah WOE",
+                'email'=> "Email atau Password Salah",
             ])->onlyInput('email');
         }
     }
@@ -101,4 +104,5 @@ class AuthController extends Controller
     public function halaman_chart(){
         return view('pembeli.auth.chart');
     }
+
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web\Pembeli;
 
 use App\Http\Controllers\Controller;
+use App\Models\Artikel;
 use Illuminate\Http\Request;
 use App\Models\Pembeli;
 use App\Models\Barang;
@@ -61,5 +62,11 @@ class PembeliController extends Controller
         ]);
     }
 
-    
+    public function lihat_artikel ($artikel){
+        $artikel_model = Artikel::findOrFail($artikel);
+        return view('pembeli.artikel.lihat', [
+            "artikel" => $artikel_model
+        ]);
+    }
+
 }

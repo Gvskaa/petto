@@ -21,6 +21,7 @@ class ArtikelController extends Controller
     }
 
     public function submit_register_artikel(Request $request){
+        //judul dan isi artikel tidak boleh kosong
         $validated = $request->validate([
             'judul_artikel' => 'required',
             'isi_artikel' => 'required',
@@ -56,6 +57,15 @@ class ArtikelController extends Controller
         ]);
     }
 
+    public function lihat_artikel(Artikel $artikel){
+        return view(
+            'admin.artikel.lihat',
+            [
+                "artikel" //variabel yang akan ditulis di view
+                =>$artikel //variabel di controller
+            ]);
+    }
+
     public function ubah_artikel($artikel, Request $request){
         $admin = auth('admin')->user();
 
@@ -63,7 +73,7 @@ class ArtikelController extends Controller
         $judul_artikel =  $request->judul_artikel;
         $isi_artikel = $request->isi_artikel;
 
-        $artikel_model = artikel::FindOrFail($artikel);
+        $artikel_model = Artikel::FindOrFail($artikel);
 
         if($request->hasFile('gambar_artikel')){
             $lokasi_ubah_gambarartikel = $request->gambar_artikel->store('lokasi_ubah_gambarartikel');

@@ -11,6 +11,7 @@ use App\Http\Controllers\Web\Pembeli\PembeliController as PembeliPembeliControll
 use App\Http\Controllers\Web\Penjual\BarangController;
 use App\Http\Controllers\Web\Pembeli\BeliController;
 use App\Http\Controllers\Web\Penjual\PembelianController;
+
 use App\Models\Pembeli;
 
 
@@ -51,7 +52,7 @@ Route::middleware(['auth:admin'])->group(function(){
     Route::get('/admin/artikel/{artikel}/ubah', [ArtikelController::class, "form_ubah_artikel"])->name('admin.artikel.ubah');
     Route::post('/admin/artikel/{artikel}/ubah', [ArtikelController::class, "ubah_artikel"])->name('admin.artikel.submit_ubah');
     Route::post('/admin/artikel/{artikel}/hapus', [ArtikelController::class, "hapus_artikel"])->name('admin.artikel.hapus');
-
+    Route::get('/admin/artikel/{artikel}/lihat', [ArtikelController::class, "lihat_artikel"])->name('admin.artikel.lihat');
 });
 
 Route::middleware(['auth:pembeli'])->group(function(){
@@ -64,7 +65,7 @@ Route::get('/pembeli/daftarpembelian', [BeliController:: class, 'daftar_pemesana
 Route::get('/pembeli/index', [PembeliAuthController::class, "halaman_index"])->name('pembeli.index');
 Route::get('/pembeli/chart', [PembeliAuthController::class, "halaman_chart"])->name('pembeli.chart');
 Route::get('/pembeli/{barang}/detail', [BeliController::class, "detail_barang"])->name('pembeli.barang.detail');
-
+Route::get('/pembeli/{artikel}/lihat', [PembeliPembeliController::class, "lihat_artikel"])->name('pembeli.artikel.lihat');
 });
 
 

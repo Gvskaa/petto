@@ -54,11 +54,14 @@
                             </td>
                             <td>
                                 <button type="button" class="btn btn-inverse-primary btn-sm">
+                                    <a href="{{route('admin.artikel.lihat', $artikel->id)}}">Lihat</a>
+                                </button>
+                                <button type="button" class="btn btn-inverse-primary btn-sm">
                                     <a href="{{route('admin.artikel.ubah', $artikel->id)}}">Ubah</a>
                                 </button>
                                 @csrf
                                 <form action="{{route('admin.artikel.hapus', $artikel->id)}}", method="POST">
-                                <button type="submit" class="btn btn-inverse-danger btn-sm">
+                                <button type="submit" class="btn btn-inverse-danger btn-sm" >
                                     Hapus
                                 </button></form>
                             </td>

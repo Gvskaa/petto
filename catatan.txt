@@ -25,3 +25,6 @@ http response code -> untuk melihat kegunaan kode pada api
 -belongs to menggunakan assosiate buat menghubungkan
 
 -post menggunakan form sedangkan get menggunakan href
+
+- untuk memperbarui link penyimpan biar bisa diakses public (user)
+    php artisan storage:link

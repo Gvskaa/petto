@@ -171,7 +171,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('penjual.pembeli.daftarpesanan') }}">
                             <i class="icon-book menu-icon"></i>
-                            <span class="menu-title">Daftar Data Pemesanan</span>
+                            <span class="menu-title">Data Pemesanan</span>
                         </a>
                     </li>
                 </ul>

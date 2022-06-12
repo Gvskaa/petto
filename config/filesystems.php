@@ -99,6 +99,10 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+
+        //untuk menampilkan gambar artikel
+        public_path('lokasi_gambar_artikel') => storage_path('app/public/lokasi_gambar_artikel'),
+
     ],
 
 ];
