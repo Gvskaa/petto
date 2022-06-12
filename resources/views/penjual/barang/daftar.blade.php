@@ -1,13 +1,13 @@
-@extends('admin.layouts.main')
+@extends('penjual.layouts_penjual.main')
 
-@section('container')
+{{-- @section('container')
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Table Barang</h4>
                 <p class="card-description">
                     <button class="btn btn-inverse-primary btn-sm">
-                        <a href="{{ route('admin.penjual.barang.halaman') }}">Tambah</a>
+                        <a href="{{ route('penjual.barang.halaman') }}">Tambah</a>
                     </button>
                 </p>
                 <div class="table-responsive">
@@ -72,17 +72,17 @@
                                     </td>
                                     <td>
                                         <button type="submit" class="btn btn-inverse-primary btn-sm">
-                                            <a href="{{route('admin.penjual.barang.ubah', $barang->id)}}" style="text-decoration:none">Ubah</a>
+                                            <a href="{{route('penjual.barang.ubah', $barang->id)}}" style="text-decoration:none">Ubah</a>
                                         </button>
-                                        
-                                            <form action="{{route('admin.penjual.barang.hapus', $barang->id)}}", method="POST">
+
+                                            <form action="{{route('penjual.barang.hapus', $barang->id)}}", method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-inverse-danger btn-sm">
                                                     Hapus
                                                 </button>
                                             </form>
-                                                
-                                            
+
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -91,4 +91,8 @@
                 </div>
             </div>
         </div>
-@endsection
+@endsection --}}
+
+<?php
+echo"ini penjual";
+?>

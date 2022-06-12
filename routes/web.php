@@ -44,20 +44,13 @@ Route::middleware(['auth:admin'])->group(function(){
     Route::post('/admin/pembeli/{pembeli}/ubah', [PembeliController::class, "ubah_pembeli"])->name('admin.pembeli.submit_ubah');
 
     Route::post('/admin/pembeli/{pembeli}/hapus', [PembeliController::class, "hapus_pembeli"])->name('admin.pembeli.hapus');
-    
+
     Route::get('/admin/artikel/daftar', [ArtikelController::class, "halaman_daftar_artikel"])->name('admin.artikel.daftar');
     Route::get('/admin/artikel/tambah', [ArtikelController::class, "halaman_register_artikel"])->name('admin.artikel.halaman');
     Route::post('/admin/artikel/tambah', [ArtikelController::class, "submit_register_artikel"])->name('admin.artikel.submit');
     Route::get('/admin/artikel/{artikel}/ubah', [ArtikelController::class, "form_ubah_artikel"])->name('admin.artikel.ubah');
     Route::post('/admin/artikel/{artikel}/ubah', [ArtikelController::class, "ubah_artikel"])->name('admin.artikel.submit_ubah');
     Route::post('/admin/artikel/{artikel}/hapus', [ArtikelController::class, "hapus_artikel"])->name('admin.artikel.hapus');
-    
-    Route::get('/admin/barang/daftar', [BarangController::class, "halaman_daftar_barang"])->name('admin.penjual.barang.daftar');
-    Route::get('/admin/barang/tambah', [BarangController::class, "halaman_register_barang"])->name('admin.penjual.barang.halaman');
-    Route::post('/admin/barang/tambah', [BarangController::class, "submit_register_barang"])->name('admin.penjual.barang.submit');
-    Route::get('/admin/barang/{barang}/ubah', [BarangController::class, "form_ubah_barang"])->name('admin.penjual.barang.ubah');
-    Route::post('/admin/barang/{barang}/ubah', [BarangController::class, "ubah_barang"])->name('admin.penjual.barang.submit_ubah');
-    Route::post('/admin/barang/{barang}/hapus', [BarangController::class, "hapus_barang"])->name('admin.penjual.barang.hapus');
 
 });
 
@@ -94,6 +87,13 @@ Route::middleware(['auth:penjual'])->group(function(){
     Route::get('/penjual/logout', [PenjualAuthController::class, "logout"])->name('penjual.logout');
     Route::get('/penjual/pembeli/daftarpemesanan', [PembelianController::class, "daftar_pemesanan"])->name('penjual.pembeli.daftarpesanan');
     Route::post('/penjual/{pembelian}/konfirmasi', [BarangController::class, "konfirmasi"])->name('penjual.konfirmasi');
+    Route::get('/penjual/barang/daftar', [BarangController::class, "halaman_daftar_barang"])->name('penjual.barang.daftar');
+    Route::get('/penjual/barang/tambah', [BarangController::class, "halaman_register_barang"])->name('penjual.barang.halaman');
+    Route::post('/penjual/barang/tambah', [BarangController::class, "submit_register_barang"])->name('penjual.barang.submit');
+    Route::get('/penjual/barang/{barang}/ubah', [BarangController::class, "form_ubah_barang"])->name('penjual.barang.ubah');
+    Route::post('/penjual/barang/{barang}/ubah', [BarangController::class, "ubah_barang"])->name('penjual.barang.submit_ubah');
+    Route::post('/penjual/barang/{barang}/hapus', [BarangController::class, "hapus_barang"])->name('penjual.barang.hapus');
+
 });
 
 

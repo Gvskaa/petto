@@ -17,13 +17,13 @@ class Barang extends Model
         'harga_barang', 'foto_barang', 'nama_barang', 'keterangan', 'stok_barang', 'kategori_barang', 'status_barang'
     ];
 
-    public function admin(){
-        return $this->belongsTo(
-            Barang::class,
-            "id_admin",
-            "id"
-        );
-    }
+    // public function admin(){
+    //     return $this->belongsTo(
+    //         Barang::class,
+    //         "id_admin",
+    //         "id"
+    //     );
+    // }
 
     public function penjual(){
         return $this->belongsTo(
