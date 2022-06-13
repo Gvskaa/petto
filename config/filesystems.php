@@ -108,7 +108,7 @@ return [
         //untuk menampilkan gambar artikel
         public_path('lokasi_gambar_artikel') => storage_path('app/public/lokasi_gambar_artikel'),
 
-        public_path('bukti_pembayaran') => storage_path('app/bukti_pembayaran')
+        public_path('bukti_pembayaran') => storage_path('app/public/bukti_pembayaran')
     ],
 
     ];
