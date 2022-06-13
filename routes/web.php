@@ -51,7 +51,7 @@ Route::middleware(['auth:admin'])->group(function(){
     Route::post('/admin/artikel/tambah', [ArtikelController::class, "submit_register_artikel"])->name('admin.artikel.submit');
     Route::get('/admin/artikel/{artikel}/ubah', [ArtikelController::class, "form_ubah_artikel"])->name('admin.artikel.ubah');
     Route::post('/admin/artikel/{artikel}/ubah', [ArtikelController::class, "ubah_artikel"])->name('admin.artikel.submit_ubah');
-    Route::post('/admin/artikel/{artikel}/hapus', [ArtikelController::class, "hapus_artikel"])->name('admin.artikel.hapus');
+    Route::post('/admin/artikel/{artikel}/hapus', [ArtikelController::class, "artikel_hapus"])->name('admin.artikel.hapus');
     Route::get('/admin/artikel/{artikel}/lihat', [ArtikelController::class, "lihat_artikel"])->name('admin.artikel.lihat');
 });
 
@@ -70,8 +70,8 @@ Route::post('/pembeli/pemesanan/{pemesanan}/hapus',[BeliController::class, "hapu
 Route::post('/pembeli/{barang}/checkout', [BeliController::class, "checkout"])->name('pembeli.checkout');
 Route::get('/pembeli/pemesanan/{pemesanan}/checkout', [BeliController::class, "formulir_alamat"])->name('pembeli.formulir_alamat');
 Route::post('/pembeli/pemesanan/{pemesanan}/sumbit/checkout', [BeliController::class, "submit_formulir_pemesanan"])->name('pembeli.formulir.pemesanan');
-Route::get('/pembeli.barang/shop', [BeliController::class, 'halaman_shop'])->name('pembeli.shop');
-Route::get('/pembeli.profilPengguna', [PembeliAuthController::class, 'profil_pembeli'])->name('pembeli.profilPembeli');
+Route::get('/pembeli/barang/shop', [BeliController::class, 'halaman_shop'])->name('pembeli.shop');
+Route::get('/pembeli/profil/{pembeli}/pembeli', [PembeliAuthController::class, 'profil_pembeli'])->name('pembeli.profilPembeli');
 
 });
 

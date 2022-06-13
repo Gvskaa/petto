@@ -41,8 +41,8 @@
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item" ><a title="Register or Login" href="login.html">Login</a></li>
-								<li class="menu-item" ><a title="Register or Login" href="register.html">Register</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.logout')}}">Logout</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.profilPembeli',$pembeli->id)}}">Profil</a></li>
 
 							</ul>
 						</div>
@@ -100,10 +100,10 @@
 					@foreach ( $daftar_artikel as $artikel )
 
                     <div class="item-slide">
-						<img src="{{asset($artikel->gambar_artikel) }} ">
+						<img src="{{asset($artikel->gambar_artikel) }}"  width="580" height="190">
 						<div class="slide-info slide-1">
 							<h2 class="f-title">{{$artikel->judul_artikel}}</h2>
-							<a href="{{route('pembeli.artikel.lihat', $artikel->id)}}" class="btn-link">Lihat Selengkapnya</a>
+							<a href="{{route('pembeli.artikel.lihat', $artikel->id)}}" class="btn-link" >Lihat Selengkapnya</a>
 						</div>
 					</div>
                     @endforeach
@@ -143,7 +143,7 @@
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
 											<a href="{{route('pembeli.barang.detail', $barang->id)}}" name="Barang">
-												<figure><img src="{{asset($barang->foto_barang)}}" width="800" height="800" alt="Barang"></figure>
+												<figure><img src="{{asset($barang->foto_barang)}}" width="200" height="200" alt="Barang"></figure>
 											</a>
 											<div class="group-flash">
 												<span class="flash-item new-label">Baru</span>

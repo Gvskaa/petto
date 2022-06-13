@@ -46,7 +46,7 @@
                                     {{ $pemesanan->barang->harga_barang * $pemesanan->jumlah_barang }}
                                 </td>
                                 <td>
-                                    <img src="{{asset($pemesanan->barang->foto_barang)}}" width="50" height="50">
+                                    <img src="{{asset($pemesanan->bukti_pembayaran)}}" width="50" height="50">
                                 </td>
                                 <td>
                                     {{ $pemesanan->status_pembayaran}}

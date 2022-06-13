@@ -38,7 +38,6 @@ class BarangController extends Controller
         if($request->hasFile('foto_barang')){
             $lokasi_foto_barang = $request->foto_barang->store('lokasi_foto_barang');
         }
-
         $penjual->barang()->create([
             "harga_barang" => $harga_barang,
             "foto_barang" => $lokasi_foto_barang,

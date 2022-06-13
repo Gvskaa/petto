@@ -29,13 +29,10 @@
                 <form class="pt-3"
                     method="POST"
                     action="{{route ('penjual.barang.submit')}}"
-                >
+                enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="harga_barang" placeholder="Harga">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="foto_barang" placeholder="Foto">
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="nama_barang" placeholder="Nama Barang">
@@ -55,6 +52,9 @@
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="keterangan" placeholder="Deskripsi">
+                </div>
+                <div class="form-group">
+                    <input type="file" class="form-control form-control-lg" name="foto_barang" placeholder="Foto">
                 </div>
                 <div class="mt-3">
                 <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="Tambah"/>

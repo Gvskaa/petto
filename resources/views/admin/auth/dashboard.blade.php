@@ -57,7 +57,7 @@
                     <div class="card-body">
                         <p class="mb-4">Total Penjual</p>
                         <p class="fs-30 mb-2">{{$jumlah_penjual}}</p>
-                        <p>10.00% (30 hari)</p>
+                       
                     </div>
                 </div>
             </div>
@@ -65,8 +65,8 @@
                 <div class="card card-dark-blue">
                     <div class="card-body">
                         <p class="mb-4">Total Pembeli</p>
-                        <p class="fs-30 mb-2">110</p>
-                        <p>22.00% (30 hari)</p>
+                        <p class="fs-30 mb-2">{{$jumlah_pembeli}}</p>
+                        
                     </div>
                 </div>
             </div>
@@ -76,8 +76,7 @@
                 <div class="card card-light-blue">
                     <div class="card-body">
                         <p class="mb-4">Total Barang</p>
-                        <p class="fs-30 mb-2">34040</p>
-                        <p>2.00% (30 hari)</p>
+                        <p class="fs-30 mb-2">{{$jumlah_barang}}</p>
                     </div>
                 </div>
             </div>
@@ -85,8 +84,7 @@
                 <div class="card card-light-danger">
                     <div class="card-body">
                         <p class="mb-4">Total Artikel</p>
-                        <p class="fs-30 mb-2">9</p>
-                        <p>0.8% (30 hari)</p>
+                        <p class="fs-30 mb-2">{{$jumlah_artikel}}</p>
                     </div>
                 </div>
             </div>

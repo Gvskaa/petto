@@ -89,9 +89,16 @@ class ArtikelController extends Controller
     }
 
     public function hapus_artikel($artikel){
-        $artikel_hapus = Artikel::find($artikel);
+        $artikel_hapus = Artikel::findOrFail($artikel);
         $artikel_hapus->delete();
 
         return redirect()->route('admin.artikel.daftar')->with('success', 'anjay');
+    }
+
+    public function artikel_hapus($artikel){
+        $hapus_artikel = Artikel::FindOrFail($artikel);
+        $hapus_artikel->delete();
+
+        return redirect()->route('admin.artikel.daftar');
     }
 }

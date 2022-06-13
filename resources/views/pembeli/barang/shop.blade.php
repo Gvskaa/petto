@@ -42,7 +42,7 @@
 						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.logout')}}">Logout</a></li>
-                                <li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.profil')}}">Profil</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.profilPembeli',$pembeli->id)}}">Profil</a></li>
 							</ul>
 						</div>
 					</div>

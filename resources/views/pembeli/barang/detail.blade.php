@@ -42,7 +42,8 @@
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item" ><a title="Register or Login" href="pembeli.logout">Logout</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.logout')}}">Logout</a></li>
+								{{-- <li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.profilPembeli',$pembeli->id)}}">Profil</a></li> --}}
 							</ul>
 						</div>
 					</div>
@@ -107,7 +108,7 @@
 							<div class="product-gallery">
 							  <ul class="#">
 							    <li data-thumb="/pembeli/images/products/digital_18.jpg">
-							    	<img src="/pembeli/images/products/digital_18.jpg" alt="product thumbnail" />
+							    	<img src="{{asset($barang->foto_barang)}}" alt="product thumbnail" />
 							    </li>
 							  </ul>
 							</div>
