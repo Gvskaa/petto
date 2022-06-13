@@ -41,8 +41,8 @@
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item" ><a title="Register or Login" href="pembeli.logout">Logout</a></li>
-								<li class="menu-item" ><a title="Register or Login" href="#">Profil</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.logout')}}">Logout</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.profilPembeli',$pembeli->id)}}">Profil</a></li>
 							</ul>
 						</div>
 					</div>
@@ -107,7 +107,7 @@
                          @foreach($daftar_pembelian as $pembelian)
 						<li class="pr-cart-item">
 							<div class="product-image">
-								<figure><img src="/pembeli/images/products/digital_18.jpg" alt=""></figure>
+								<figure><img src="{{asset($pembelian->barang->foto_barang)}}" width="900" height="900" alt=""></figure>
 							</div>
 							<div class="product-name">
 								<h5>Nama Produk</h5>

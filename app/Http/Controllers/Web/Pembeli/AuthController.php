@@ -141,7 +141,6 @@ class AuthController extends Controller
             "tlp_pembeli" => $tlp_pembeli,
             "alamat_pembeli" => $alamat_pembeli
         ]);
-        $pembeli_model->pembelian()->associate($pembeli);
         $pembeli_model->save();
         return redirect()->route('');
     

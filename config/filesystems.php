@@ -51,7 +51,7 @@ return [
         //lokasi menyimpan foto barang
         'lokasi_foto_barang' => [
             'driver' => 'local',
-            'root' => storage_path('app/foto_barang'),
+            'root' => storage_path('app/lokasi_foto_barang'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
@@ -106,9 +106,9 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
         //untuk menampilkan gambar artikel
-        public_path('lokasi_gambar_artikel') => storage_path('app/public/lokasi_gambar_artikel'),
-
-        public_path('bukti_pembayaran') => storage_path('app/public/bukti_pembayaran')
+        public_path('lokasi_gambar_artikel') => storage_path('app/lokasi_gambar_artikel'),
+        public_path('bukti_pembayaran') => storage_path('app/bukti_pembayaran'),
+        public_path('lokasi_foto_barang') => storage_path('app/lokasi_foto_barang')
     ],
 
     ];

@@ -41,7 +41,7 @@
                                 {{ $artikel->id }}
                             </td>
                             <td>
-                                {{ $artikel->gambar_artikel }}
+                                <img src="{{asset($artikel->foto_artikel)}}" width="800" height="800" alt="Barang">
                             </td>
                             <td>
                                 {{ $admin->nama_admin }}
@@ -59,11 +59,13 @@
                                 <button type="button" class="btn btn-inverse-primary btn-sm">
                                     <a href="{{route('admin.artikel.ubah', $artikel->id)}}">Ubah</a>
                                 </button>
-                                @csrf
+                                
                                 <form action="{{route('admin.artikel.hapus', $artikel->id)}}", method="POST">
-                                <button type="submit" class="btn btn-inverse-danger btn-sm" >
+                                    @csrf
+                                    <button type="submit" class="btn btn-inverse-danger btn-sm" >
                                     Hapus
-                                </button></form>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

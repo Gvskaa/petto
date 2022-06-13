@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\Penjual;
+use App\Models\Pembeli;
+use App\Models\Artikel;
+use App\Models\Barang;
 
 class AuthController extends Controller
 {
@@ -37,9 +40,15 @@ class AuthController extends Controller
     public function halaman_dashboard_admin(){
         $admin = Auth::guard('admin')->user();
         $jumlah_penjual = Penjual::count();
+        $jumlah_artikel = Artikel::count();
+        $jumlah_pembeli = Pembeli::count();
+        $jumlah_barang = Barang::count();
         return view('admin.auth.dashboard', [
             'admin' => $admin,
-            'jumlah_penjual' => $jumlah_penjual
+            'jumlah_penjual' => $jumlah_penjual,
+            'jumlah_artikel' => $jumlah_artikel,
+            'jumlah_pembeli' => $jumlah_pembeli,
+            'jumlah_barang' => $jumlah_barang
         ]);
     }
 
