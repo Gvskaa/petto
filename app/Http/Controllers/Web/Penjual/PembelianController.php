@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Web\Penjual;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pembelian;
+use App\Models\Penjual;
 
 class PembelianController extends Controller
 {
