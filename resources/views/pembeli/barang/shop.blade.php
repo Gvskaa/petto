@@ -27,31 +27,39 @@
 								<div class="product product-style-3 equal-elem ">
 									<div class="product-thumnail">
 										<a href="{{route('pembeli.barang.detail', $barang->id)}}" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-											<figure><img src="/pembeli/images/products/digital_20.jpg" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											<figure><img src="{{asset($barang->foto_barang)}}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 										</a>
 									</div>
 									<div class="product-info">
 										<a href="#" class="product-name"><span>{{$barang->nama_barang}}</span></a>
 										<div class="wrap-price"><span class="product-price">{{$barang->harga_barang}}</span></div>
-										<a href="#" class="btn add-to-cart">Keranjang</a>
+										<a href="{{route('pembeli.barang.detail', $barang->id)}}" class="btn add-to-cart">Keranjang</a>
 									</div>
 								</div>
 							</li>
                             @endforeach
+							<div class="wrap-show-advance-info-box style-1">
+								<h3 class="title-box">Kategori Produk</h3>
+							@foreach($daftar_barang_kategori as $barang)
 							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
 								<div class="product product-style-3 equal-elem ">
 									<div class="product-thumnail">
-										<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-											<figure><img src="/pembeli/images/products/digital_22.jpg" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										<a href="{{route('pembeli.barang.detail', $barang->id)}}" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+											<figure><img src="{{asset($barang->foto_barang)}}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 										</a>
 									</div>
 									<div class="product-info">
-										<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-										<div class="wrap-price"><span class="product-price">$250.00</span></div>
-										<a href="#" class="btn add-to-cart">Add To Cart</a>
+										<a href="#" class="product-name"><span>{{$barang->nama_barang}}</span></a>
+										<div class="wrap-price"><span class="product-price">{{$barang->harga_barang}}</span></div>
+										<a href="{{route('pembeli.barang.detail', $barang->id)}}" class="btn add-to-cart">Add To Cart</a>
 									</div>
 								</div>
 							</li>
+<<<<<<< HEAD
+=======
+							@endforeach
+							</div>
+>>>>>>> 1b8b5740aef6acf43875dc5ce2f66438e3ed490a
 						</ul>
 					</div>
 					<div class="wrap-pagination-info">
@@ -69,12 +77,22 @@
 						<div class="widget-content">
 							<ul class="list-category">
 								<li class="category-item has-child-cate">
+<<<<<<< HEAD
 									<a href="#" class="cate-link">Makanan</a>
 									<span class="toggle-control">+</span>
 									<ul class="sub-cate">
 										<li class="category-item"><a href="#" class="cate-link">Kering</a></li>
 										<li class="category-item"><a href="#" class="cate-link">Basah</a></li>
 									</ul>
+=======
+									<a href="{{route('pembeli.shop') . '?kategori=Anjing'}}" class="cate-link">Anjing</a>
+								</li>
+								<li class="category-item has-child-cate">
+									<a href="#" class="cate-link">Furnitures & Home Decors</a>
+								</li>
+								<li class="category-item has-child-cate">
+									<a href="#" class="cate-link">Digital & Electronics</a>
+>>>>>>> 1b8b5740aef6acf43875dc5ce2f66438e3ed490a
 								</li>
 								<li class="category-item">
 									<a href="#" class="cate-link">Obat</a>

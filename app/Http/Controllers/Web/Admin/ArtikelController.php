@@ -92,7 +92,7 @@ class ArtikelController extends Controller
         $artikel_hapus = Artikel::findOrFail($artikel);
         $artikel_hapus->delete();
 
-        return redirect()->route('admin.artikel.daftar')->with('success', 'anjay');
+        return redirect()->route('admin.artikel.daftar')->with('Artikel', 'berhasil dihapus');
     }
 
     public function artikel_hapus($artikel){

@@ -15,14 +15,17 @@ use App\Models\Artikel;
 class AuthController extends Controller
 {
 
-    public function halaman_index(){
+    public function halaman_index(Request $request){
         $pembeli = auth('pembeli')->user();
         $daftar_barang = Barang::all();
         $daftar_artikel = Artikel::all();
+        $kategori = $request->kategori;
+        $daftar_barang_kategori = Barang::where("kategori_barang", $kategori)->get();
         return view('pembeli.auth.index',[
             "pembeli"=> $pembeli,
             "daftar_barang" => $daftar_barang,
-            "daftar_artikel" => $daftar_artikel
+            "daftar_artikel" => $daftar_artikel,
+            "daftar_barang_kategori" => $daftar_barang_kategori
         ]);
     }
 
@@ -147,7 +150,35 @@ class AuthController extends Controller
     }
 
     public function profil_pembeli(){
-        return view('pembeli.auth.profilPembeli');
+        $pembeli_model = auth('pembeli')->user();
+        return view('pembeli.auth.profilPembeli',[
+            'pembeli' => $pembeli_model
+        ]);
+    }
+
+    public function ubah_profil(Request $request){
+        $pembeli_model = auth('pembeli')->user();
+
+        $nama_pembeli = $request->nama_pembeli;
+        $email = $request->email;
+        $password = $request->password;
+        $jk_pembeli = $request->jk_pembeli;
+        $tlp_pembeli = $request->tlp_pembeli;
+        $alamat_pembeli = $request->alamat_pembeli;
+
+        if($request->hasFile('foto_pembeli')){
+            $lokasi_profil_pembeli = $request->foto_pembeli->store('lokasi_profil_pembeli');
+        }
+        $pembeli_model->update([
+            "nama_pembeli" => $nama_pembeli,
+            "email" => $email,
+            "password" => Hash::make($password),
+            "jk_pembeli" => $jk_pembeli,
+            "tlp_pembeli" => $tlp_pembeli,
+            "alamat_pembeli" => $alamat_pembeli,
+            "foto_pembeli" => $lokasi_profil_pembeli
+        ]);
+        return redirect()->route('pembeli.profilPembeli');
     }
 
 }

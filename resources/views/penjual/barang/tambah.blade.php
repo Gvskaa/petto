@@ -48,7 +48,12 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="kategori_barang" placeholder="Kategori">
+                    <select class="form-control form-control-lg" name="kategori_barang">
+                        <option>Anjing</option>
+                        <option>Kucing</option>
+                        <option>Ikan</option>
+                        <option>Burung</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="keterangan" placeholder="Deskripsi">
