@@ -42,7 +42,7 @@
 						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.logout')}}">Logout</a></li>
-								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.profilPembeli',$pembeli->id)}}">Profil</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="{{route('pembeli.profilPembeli')}}">Profil</a></li>
 
 							</ul>
 						</div>
@@ -177,20 +177,20 @@
 				<div class="wrap-products">
 					<div class="wrap-product-tab tab-style-1">
 						<div class="tab-control">
-							<a href="#fashion_1a" class="tab-control-item active">Smartphone</a>
-							<a href="#fashion_1b" class="tab-control-item">Watch</a>
-							<a href="#fashion_1c" class="tab-control-item">Laptop</a>
-							<a href="#fashion_1d" class="tab-control-item">Tablet</a>
+							<a href="{{route('pembeli.index') . '?kategori=Anjing'}}" class="tab-control-item">Anjing</a>
+							<a href="#fashion_1b" class="">Kucing</a>
+							<a href="#fashion_1c" class="">Ikan</a>
+							<a href="#fashion_1d" class="">Burung</a>
 						</div>
 						<div class="tab-contents">
-
+							@foreach($daftar_barang_kategori as $barang)
 							<div class="tab-content-item active" id="fashion_1a">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
 
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="/pembeli/images/products/fashion_01.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											<a href="{{route('pembeli.barang.detail', $barang->id)}}" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="{{asset($barang->foto_barang)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">
 												<span class="flash-item new-label">new</span>
@@ -200,8 +200,8 @@
 											</div>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Lois Caron LCS-4027 Analog Watch - For Men</span></a>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+											<a href="#" class="product-name"><span>{{$barang->nama_barang}}</span></a>
+											<div class="wrap-price"><span class="product-price">{{$barang->harga_barang}}</span></div>
 										</div>
 									</div>
 
@@ -331,8 +331,8 @@
 
 								</div>
 							</div>
-
-							<div class="tab-content-item" id="fashion_1b">
+							@endforeach
+							{{-- <div class="tab-content-item" id="fashion_1b">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
 									<div class="product product-style-2 equal-elem ">
@@ -829,7 +829,7 @@
 									</div>
 
 								</div>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 				</div>

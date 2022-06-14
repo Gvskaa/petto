@@ -72,11 +72,12 @@
                                     <button type="button" class="btn btn-inverse-primary btn-sm">
                                         <a href="{{route('admin.pembeli.ubah', $pembeli->id)}}">Ubah</a>
                                     </button>
+                                    <form action="{{route('admin.pembeli.hapus', $pembeli->id)}}", method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-inverse-danger btn-sm">
                                         Hapus
-                                        <form action="{{route('admin.pembeli.hapus', $pembeli->id)}}", method="POST">
                                     </button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

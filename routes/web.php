@@ -69,9 +69,10 @@ Route::get('/pembeli/{artikel}/lihat', [PembeliPembeliController::class, "lihat_
 Route::post('/pembeli/pemesanan/{pemesanan}/hapus',[BeliController::class, "hapus_pesanan"])->name('pembeli.pesan.hapus');
 Route::post('/pembeli/{barang}/checkout', [BeliController::class, "checkout"])->name('pembeli.checkout');
 Route::get('/pembeli/pemesanan/{pemesanan}/checkout', [BeliController::class, "formulir_alamat"])->name('pembeli.formulir_alamat');
-Route::post('/pembeli/pemesanan/{pemesanan}/sumbit/checkout', [BeliController::class, "submit_formulir_pemesanan"])->name('pembeli.formulir.pemesanan');
+Route::post('/pembeli/pemesanan/{pemesanan}/submit/checkout', [BeliController::class, "submit_formulir_pemesanan"])->name('pembeli.formulir.pemesanan');
 Route::get('/pembeli/barang/shop', [BeliController::class, 'halaman_shop'])->name('pembeli.shop');
-Route::get('/pembeli/profil/{pembeli}/pembeli', [PembeliAuthController::class, 'profil_pembeli'])->name('pembeli.profilPembeli');
+Route::get('/pembeli/profil/pembeli', [PembeliAuthController::class, 'profil_pembeli'])->name('pembeli.profilPembeli');
+Route::post('/pembeli/profil/pembeli', [PembeliAuthController::class, 'ubah_profil'])->name('pembeli.ubah.profilPembeli');
 
 });
 

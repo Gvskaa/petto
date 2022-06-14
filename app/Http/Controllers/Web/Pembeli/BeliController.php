@@ -89,12 +89,16 @@ class BeliController extends Controller
         return redirect()->route('pembeli.chart');
     }
 
-    public function halaman_shop(){
+    public function halaman_shop(Request $request){
         $pembeli = auth('pembeli')->user();
         $daftar_barang = Barang::all();
+        $kategori = $request->kategori;
+        $daftar_barang_kategori = Barang::where("kategori_barang", $kategori)->get();
+
         return view('pembeli.barang.shop',[
             "pembeli"=> $pembeli,
-            "daftar_barang" => $daftar_barang
+            "daftar_barang" => $daftar_barang,
+            "daftar_barang_kategori" =>$daftar_barang_kategori
         ]);
     }
 
