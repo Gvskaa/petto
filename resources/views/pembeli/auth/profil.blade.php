@@ -12,7 +12,6 @@
 
 
 <h4 class="my-5">Data</h4>
- 
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
