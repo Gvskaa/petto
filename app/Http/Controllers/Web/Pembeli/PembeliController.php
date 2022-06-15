@@ -63,9 +63,11 @@ class PembeliController extends Controller
     }
 
     public function lihat_artikel ($artikel){
+        $pembeli = auth('pembeli')->user();
         $artikel_model = Artikel::findOrFail($artikel);
         return view('pembeli.artikel.lihat', [
-            "artikel" => $artikel_model
+            "artikel" => $artikel_model,
+            "pembeli" => $pembeli
         ]);
     }
 

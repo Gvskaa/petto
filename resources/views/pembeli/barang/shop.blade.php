@@ -55,11 +55,8 @@
 									</div>
 								</div>
 							</li>
-<<<<<<< HEAD
-=======
 							@endforeach
 							</div>
->>>>>>> 1b8b5740aef6acf43875dc5ce2f66438e3ed490a
 						</ul>
 					</div>
 					<div class="wrap-pagination-info">
@@ -77,31 +74,16 @@
 						<div class="widget-content">
 							<ul class="list-category">
 								<li class="category-item has-child-cate">
-<<<<<<< HEAD
-									<a href="#" class="cate-link">Makanan</a>
-									<span class="toggle-control">+</span>
-									<ul class="sub-cate">
-										<li class="category-item"><a href="#" class="cate-link">Kering</a></li>
-										<li class="category-item"><a href="#" class="cate-link">Basah</a></li>
-									</ul>
-=======
 									<a href="{{route('pembeli.shop') . '?kategori=Anjing'}}" class="cate-link">Anjing</a>
 								</li>
 								<li class="category-item has-child-cate">
-									<a href="#" class="cate-link">Furnitures & Home Decors</a>
+									<a href="{{route('pembeli.shop') . '?kategori=Kucing'}}" class="cate-link">Kucing</a>
 								</li>
 								<li class="category-item has-child-cate">
-									<a href="#" class="cate-link">Digital & Electronics</a>
->>>>>>> 1b8b5740aef6acf43875dc5ce2f66438e3ed490a
+									<a href="{{route('pembeli.shop') . '?kategori=Ikan'}}" class="cate-link">Ikan</a>
 								</li>
 								<li class="category-item">
-									<a href="#" class="cate-link">Obat</a>
-								</li>
-								<li class="category-item">
-									<a href="#" class="cate-link">Aksesoris</a>
-								</li>
-								<li class="category-item">
-									<a href="#" class="cate-link">Organics & Spa</a>
+									<a href="{{route('pembeli.shop') . '?kategori=Burung'}}" class="cate-link">Burung</a>
 								</li>
 							</ul>
 						</div>

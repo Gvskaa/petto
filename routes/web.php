@@ -73,6 +73,7 @@ Route::post('/pembeli/pemesanan/{pemesanan}/submit/checkout', [BeliController::c
 Route::get('/pembeli/barang/shop', [BeliController::class, 'halaman_shop'])->name('pembeli.shop');
 Route::get('/pembeli/profil/pembeli', [PembeliAuthController::class, 'profil_pembeli'])->name('pembeli.profilPembeli');
 Route::post('/pembeli/profil/pembeli', [PembeliAuthController::class, 'ubah_profil'])->name('pembeli.ubah.profilPembeli');
+Route::get('/pembeli/pemesanan', [PembeliAuthController::class, "halaman_pesanan"])->name('pembeli.pemesanan');
 
 });
 

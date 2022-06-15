@@ -19,6 +19,7 @@ class AuthController extends Controller
         $pembeli = auth('pembeli')->user();
         $daftar_barang = Barang::all();
         $daftar_artikel = Artikel::all();
+        
         $kategori = $request->kategori;
         $daftar_barang_kategori = Barang::where("kategori_barang", $kategori)->get();
         return view('pembeli.auth.index',[
@@ -26,6 +27,7 @@ class AuthController extends Controller
             "daftar_barang" => $daftar_barang,
             "daftar_artikel" => $daftar_artikel,
             "daftar_barang_kategori" => $daftar_barang_kategori
+            
         ]);
     }
 
@@ -179,6 +181,16 @@ class AuthController extends Controller
             "foto_pembeli" => $lokasi_profil_pembeli
         ]);
         return redirect()->route('pembeli.profilPembeli');
+    }
+
+    public function halaman_pesanan(){
+        $pembeli = auth('pembeli')->user();
+        $daftar_pembelian = $pembeli->pembelian;
+        
+        return view('pembeli.barang.pemesanan', [
+            "pembeli" => $pembeli,
+            "daftar_pembelian" =>$daftar_pembelian
+        ]);
     }
 
 }

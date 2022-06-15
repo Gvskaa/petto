@@ -15,15 +15,8 @@
                         <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button"
                             id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="true">
-                            <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
+                            <i class="mdi mdi-calendar"></i>Hari ini {{ date('Y-m-d H:i') }}
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right"
-                            aria-labelledby="dropdownMenuDate2">
-                            <a class="dropdown-item" href="#">January - March</a>
-                            <a class="dropdown-item" href="#">March - June</a>
-                            <a class="dropdown-item" href="#">June - August</a>
-                            <a class="dropdown-item" href="#">August - November</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -91,7 +84,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+{{-- <div class="row">
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -136,8 +129,8 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row">
+</div> --}}
+{{-- <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card position-relative">
             <div class="card-body">
@@ -424,5 +417,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

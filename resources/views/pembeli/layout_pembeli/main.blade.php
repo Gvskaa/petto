@@ -62,6 +62,9 @@
 									<a href="{{route('pembeli.chart')}}" class="link-term mercado-item-title">Keranjang</a>
 								</li>
 								<li class="menu-item">
+									<a href="{{route('pembeli.pemesanan')}}" class="link-term mercado-item-title">Pemesanan</a>
+								</li>
+								<li class="menu-item">
 									<a href="#contact" class="link-term mercado-item-title">Contact Us</a>
 								</li>
 							</ul>

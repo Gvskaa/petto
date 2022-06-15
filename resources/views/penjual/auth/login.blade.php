@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Petto | Masuk</title>
+  <title>Petto | Masuk Penjual</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
   <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
@@ -27,7 +27,7 @@
                 <div class="brand-logo">
                 <img src="/admin/images/logo.svg" alt="logo">
                 </div>
-                <h4>Hallo PETTO!</h4>
+                <h4>Hallo Penjual!</h4>
                 <h6 class="font-weight-light">Masuk untuk melanjutkan.</h6>
                 <form class="pt-3"
                     method="POST"
@@ -50,7 +50,6 @@
                         Biarkan saya masuk
                     </label>
                     </div>
-                    <a href="#" class="auth-link text-black">Lupa password?</a>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                     Belum mempunyai akun? <a href="register" class="text-primary">Hubungi Admin!</a>

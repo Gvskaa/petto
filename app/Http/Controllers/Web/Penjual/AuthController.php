@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Web\Penjual;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Barang;
+use App\Models\Pembelian;
 
 class AuthController extends Controller
 {
@@ -31,8 +33,12 @@ class AuthController extends Controller
 
     public function halaman_dashboard_penjual(){
         $penjual = Auth::guard('penjual')->user();
+        $jumlah_barang = Barang::count();
+        $jumlah_pembelian = Pembelian::count();
         return view('penjual.auth.dashboard', [
-            'penjual' => $penjual
+            'penjual' => $penjual,
+            "jumlah_barang" => $jumlah_barang,
+            "jumlah_pembelian" => $jumlah_pembelian
         ]);
     }
 

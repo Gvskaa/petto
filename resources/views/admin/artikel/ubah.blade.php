@@ -29,6 +29,7 @@
                 <form class="pt-3"
                     method="POST"
                     action="{{route ('admin.artikel.submit_ubah', $artikel->id )}}"
+                    enctype="multipart/form-data"
                 >
                 @csrf
                 <div class="form-group">
@@ -36,6 +37,9 @@
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="isi_artikel" value= {{$artikel->isi_artikel}}>
+                </div>
+                <div class="form-group">
+                    <input type="file" class="form-control form-control-lg" name="gambar_artikel" placeholder="Isi Artikel">
                 </div>
                 <div class="mt-3">
                     <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="Simpan Perubahan"/>

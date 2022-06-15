@@ -124,7 +124,7 @@
                             </div> --}}
                             <h2 class="product-name">{{$barang->nama_barang}}</h2>
                             <div class="short-desc">
-                                <ul>{{$barang->keterangan}}</ul>
+                                <ul><h2>{{$barang->penjual->nama_toko}}</h2></ul>
                             </div>
                             {{-- <div class="wrap-social">
                             	<a class="link-socail" href="#"><img src="/pembeli/images/social-list.png" alt=""></a>

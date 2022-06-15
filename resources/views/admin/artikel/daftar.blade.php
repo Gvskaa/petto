@@ -41,7 +41,7 @@
                                 {{ $artikel->id }}
                             </td>
                             <td>
-                                <img src="{{asset($artikel->foto_artikel)}}" width="800" height="800" alt="Barang">
+                                <img src="{{asset($artikel->gambar_artikel)}}" width="800" height="800" alt="Barang">
                             </td>
                             <td>
                                 {{ $admin->nama_admin }}
