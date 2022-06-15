@@ -5,7 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Petto | Penjual</title>
+    <title>
+        Penjual | @yield('title')
+    </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
     <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
@@ -37,7 +39,7 @@
                     <span class="icon-menu"></span>
                 </button>
                 <ul class="navbar-nav mr-lg-2">
-                    <li class="nav-item nav-search d-none d-lg-block">
+                    {{-- <li class="nav-item nav-search d-none d-lg-block">
                         <div class="input-group">
                             <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
                                 <span class="input-group-text" id="search">
@@ -47,10 +49,10 @@
                             <input type="text" class="form-control" id="navbar-search-input" placeholder="Cari"
                                 aria-label="search" aria-describedby="search">
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
                             data-toggle="dropdown">
                             <i class="icon-bell mx-0"></i>
@@ -99,7 +101,7 @@
                                 </div>
                             </a>
                         </div>
-                    </li>
+                    </li> --}}
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                             <img src="/admin/images/faces/default.png" alt="profile" />
@@ -163,6 +165,12 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('penjual.dashboard') }}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('penjual.barang.daftar') }}">
                             <i class="icon-book menu-icon"></i>
                             <span class="menu-title">Data Barang</span>
@@ -186,14 +194,13 @@
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022.
-                            PETTO
-                            <a href="https://www.bootstrapdash.com/" target="_blank">PETTO Indramayu</a> dari
-                            Indramayu Lohbener.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <i class="ti-heart text-danger ml-1"></i></span>
+                            Petto</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
+                            with <i class="ti-heart text-danger ml-1"></i></span>
                     </div>
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Dibuat oleh: <a
-                                href="https://www.themewagon.com/" target="_blank">Kelompok 8</a></span>
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block"><a
+                                href="#" target="_blank"></a></span>
                     </div>
                 </footer>
                 <!-- partial -->

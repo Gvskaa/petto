@@ -1,19 +1,24 @@
 @extends('penjual.layouts_penjual.main')
 
+@section('title')
+Dashboard
+@endsection
+
 @section('container')
 <div class="row">
     <div class="col-md-12 grid-margin">
         <div class="row">
             <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                 <h3 class="font-weight-bold">Selamat Datang {{$penjual->nama_toko}}!</h3>
+                <h6 class="font-weight-normal mb-0">Semua sistem berjalan normal!</h6>
             </div>
             <div class="col-12 col-xl-4">
                 <div class="justify-content-end d-flex">
                     <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                        <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button"
+                        <button class="btn btn-sm btn-light bg-white" type="button"
                             id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="true">
-                            <i class="mdi mdi-calendar"></i>Hari ini {{ date('Y-m-d H:i') }}
+                            <i class="mdi mdi-calendar"></i>Hari ini {{ date('d-m-Y') }}
                         </button>
                     </div>
                 </div>
@@ -43,30 +48,24 @@
     </div>
     <div class="col-md-6 grid-margin transparent">
         <div class="row">
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                <div class="card card-light-blue">
+            <div class="col-md-6 mb-4 stretch-card transparent">
+                <div class="card card-tale">
                     <div class="card-body">
-                        <p class="mb-4">Total Barang</p>
+                        <p class="mb-4">Total Penjual</p>
                         <p class="fs-30 mb-2">{{$jumlah_barang}}</p>
-                        <p></p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                <div class="card card-tale">
+            <div class="col-md-6 mb-4 stretch-card transparent">
+                <div class="card card-dark-blue">
                     <div class="card-body">
-                        <p class="mb-4">Total Pemesanan</p>
+                        <p class="mb-4">Total Pembeli</p>
                         <p class="fs-30 mb-2">{{$jumlah_pembelian}}</p>
-                        <p></p>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

@@ -3,7 +3,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>
+	<title>
+		@yield('title')
+	</title>
     <link rel="shortcut icon" type="image/x-icon" href="/pembeli/images/logo.png">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
@@ -65,7 +67,7 @@
 									<a href="{{route('pembeli.pemesanan')}}" class="link-term mercado-item-title">Pemesanan</a>
 								</li>
 								<li class="menu-item">
-									<a href="#contact" class="link-term mercado-item-title">Contact Us</a>
+									<a href="#contact" class="link-term mercado-item-title">Hubungi Kami</a>
 								</li>
 							</ul>
 						</div>
@@ -181,11 +183,8 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
+												<li class="menu-item"><a href="{{route('pembeli.pemesanan')}}" class="link-term">Riwayat Pemesanan</a></li>
+												<li class="menu-item"><a href="#contact" class="link-term">Hubungi Kami</a></li>
 											</ul>
 										</div>
 									</div>
@@ -195,7 +194,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+						{{-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
 								<h3 class="item-header">Pembayaran yang kami dukung</h3>
 								<div class="item-content">
@@ -204,7 +203,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
@@ -214,9 +213,7 @@
 										<ul>
 											<li><a href="#" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 											<li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
 										</ul>
 									</div>
 								</div>
@@ -267,5 +264,9 @@
 	<script src="/pembeli/js/jquery.countdown.min.js"></script>
 	<script src="/pembeli/js/jquery.sticky.js"></script>
 	<script src="/pembeli/js/functions.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,21 +1,24 @@
 @extends('admin.layouts.main')
 
+@section('title')
+Dashboard
+@endsection
+
 @section('container')
 <div class="row">
     <div class="col-md-12 grid-margin">
         <div class="row">
             <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                 <h3 class="font-weight-bold">Selamat Datang {{$admin->nama_admin}}!</h3>
-                <h6 class="font-weight-normal mb-0">Semua sistem berjalan normal! Kamu punya
-                    <span class="text-primary">3 pesan belum terbaca!</span></h6>
+                <h6 class="font-weight-normal mb-0">Semua sistem berjalan normal!</h6>
             </div>
             <div class="col-12 col-xl-4">
                 <div class="justify-content-end d-flex">
                     <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                        <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button"
+                        <button class="btn btn-sm btn-light bg-white" type="button"
                             id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="true">
-                            <i class="mdi mdi-calendar"></i>Hari ini {{ date('Y-m-d H:i') }}
+                            <i class="mdi mdi-calendar"></i>Hari ini {{ date('d-m-Y') }}
                         </button>
                     </div>
                 </div>
@@ -50,7 +53,6 @@
                     <div class="card-body">
                         <p class="mb-4">Total Penjual</p>
                         <p class="fs-30 mb-2">{{$jumlah_penjual}}</p>
-                       
                     </div>
                 </div>
             </div>

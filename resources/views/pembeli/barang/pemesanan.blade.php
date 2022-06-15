@@ -1,17 +1,22 @@
 @extends('pembeli.layout_pembeli.main')
 
+@section('title')
+Pemesanan
+@endsection
+
 @section('container')
 	<!--main area-->
 	<main id="main" class="main-site">
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="{{route('pembeli.index')}}" class="link">Beranda</a></li>
+					<li class="item-link"><a href="{{route('pembeli.index')}}" class="link">Home</a></li>
+					<li class="item-link"><span>Pemesanan</span></li>
 				</ul>
 			</div>
 			<div class=" main-content-area">
 				<div class="wrap-iten-in-cart">
-					<h3 class="box-title">Keranjang</h3>
+					<h3 class="box-title">Pemesanan</h3>
 					<ul class="products-cart">
                         @foreach($daftar_pembelian as $pembelian)
 						<li class="pr-cart-item">

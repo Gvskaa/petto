@@ -25,7 +25,7 @@
             <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                 <div class="brand-logo">
-                <img src="/admin/images/logo.svg" alt="logo">
+                <img src="/admin/images/logos.png" alt="logo">
                 </div>
                 <h4>Hallo Penjual!</h4>
                 <h6 class="font-weight-light">Masuk untuk melanjutkan.</h6>
@@ -33,6 +33,10 @@
                     method="POST"
                     action="{{route ('penjual.login')}}"
                 >
+                @csrf
+                @error('email')
+                    <span style='color: red'>{{$message}}</span><br>
+                @endError
                 @csrf
                 <div class="form-group">
                     <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
@@ -44,12 +48,12 @@
                     <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Masuk</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
-                    <div class="form-check">
+                    {{-- <div class="form-check">
                     <label class="form-check-label text-muted">
                         <input type="checkbox" class="form-check-input">
                         Biarkan saya masuk
                     </label>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                     Belum mempunyai akun? <a href="register" class="text-primary">Hubungi Admin!</a>

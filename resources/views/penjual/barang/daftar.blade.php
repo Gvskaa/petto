@@ -1,5 +1,9 @@
 @extends('penjual.layouts_penjual.main')
 
+@section('title')
+Data Barang
+@endsection
+
 @section('container')
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
