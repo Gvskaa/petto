@@ -12,11 +12,7 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
-					<div class="banner-shop">
-						<a href="#" class="banner-link">
-							<figure><img src="/pembeli/images/shop-banner.jpg" alt=""></figure>
-						</a>
-					</div>
+
 					<div class="wrap-shop-control">
 						<h1 class="shop-title">Daftar Barang</h1>
 					</div><!--end wrap shop control-->
@@ -51,7 +47,7 @@
 									<div class="product-info">
 										<a href="#" class="product-name"><span>{{$barang->nama_barang}}</span></a>
 										<div class="wrap-price"><span class="product-price">{{$barang->harga_barang}}</span></div>
-										<a href="{{route('pembeli.barang.detail', $barang->id)}}" class="btn add-to-cart">Add To Cart</a>
+										<a href="{{route('pembeli.barang.detail', $barang->id)}}" class="btn add-to-cart">Keranjang</a>
 									</div>
 								</div>
 							</li>
