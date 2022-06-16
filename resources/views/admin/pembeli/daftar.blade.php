@@ -1,5 +1,9 @@
 @extends('admin.layouts.main')
 
+@section('title')
+Data Pembeli
+@endsection
+
 @section('container')
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">

@@ -1,5 +1,9 @@
 @extends('pembeli.layout_pembeli.main')
 
+@section('title')
+Home
+@endsection
+
 @section('container')
 	<main id="main">
 		<div class="container">
@@ -23,12 +27,12 @@
 			<div class="wrap-banner style-twin-default">
 				<div class="banner-item">
 					<a href="#" class="link-banner banner-effect-1">
-						<figure><img src="/pembeli/images/banneranjing.jpg" alt="" width="580" height="190"></figure>
+						<figure><img src="/pembeli/images/cat_banner.png" alt="" width="580" height="190"></figure>
 					</a>
 				</div>
 				<div class="banner-item">
 					<a href="#" class="link-banner banner-effect-1">
-						<figure><img src="/pembeli/images/bannerburung.jpg" alt="" width="580" height="190"></figure>
+						<figure><img src="/pembeli/images/purina_banner.png" alt="" width="580" height="190"></figure>
 					</a>
 				</div>
 			</div>

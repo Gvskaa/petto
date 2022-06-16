@@ -1,12 +1,17 @@
 @extends('pembeli.layout_pembeli.main')
 
+@section('title')
+Keranjang
+@endsection
+
 @section('container')
 	<!--main area-->
 	<main id="main" class="main-site">
 		<div class="container">
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="{{route('pembeli.index')}}" class="link">Beranda</a></li>
+					<li class="item-link"><a href="{{route('pembeli.index')}}" class="link">Home</a></li>
+					<li class="item-link"><span>Keranjang</span></li>
 				</ul>
 			</div>
 			<div class=" main-content-area">

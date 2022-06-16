@@ -1,5 +1,9 @@
 @extends('admin.layouts.main')
 
+@section('title')
+Data Penjual
+@endsection
+
 @section('container')
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
@@ -33,9 +37,6 @@
                                     Telepon
                                 </th>
                                 <th>
-                                    Alamat
-                                </th>
-                                <th>
                                     Aksi
                                 </th>
                             </tr>
@@ -60,9 +61,6 @@
                                 </td>
                                 <td>
                                     {{ $penjual->tlp_penjual }}
-                                </td>
-                                <td>
-                                    {{$penjual->alamat_penjual}}
                                 </td>
                                 <td>
                                     <button type="submit" class="btn btn-inverse-primary btn-sm">
