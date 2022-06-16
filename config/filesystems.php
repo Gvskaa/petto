@@ -86,6 +86,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'lokasi_profil' => [
+            'driver' => 'local',
+            'root' => storage_path('app/lokasi_profil_pembeli'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -117,7 +124,8 @@ return [
         public_path('bukti_pembayaran') => storage_path('app/bukti_pembayaran'),
         public_path('lokasi_foto_barang') => storage_path('app/lokasi_foto_barang'),
         public_path('lokasi_profil_pembeli') => storage_path('app/lokasi_profil_pembeli'),
-        public_path('lokasi_ubah_gambarartikel') => storage_path('app/lokasi_ubah_gambarartikel')
+        public_path('lokasi_ubah_gambarartikel') => storage_path('app/lokasi_ubah_gambarartikel'),
+        public_path('lokasi_profil') => storage_path('app/lokasi_profil'),
     ],
 
     ];

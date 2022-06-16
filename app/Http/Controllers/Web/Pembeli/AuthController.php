@@ -167,10 +167,7 @@ class AuthController extends Controller
         $jk_pembeli = $request->jk_pembeli;
         $tlp_pembeli = $request->tlp_pembeli;
         $alamat_pembeli = $request->alamat_pembeli;
-
-        if($request->hasFile('foto_pembeli')){
-            $lokasi_profil_pembeli = $request->foto_pembeli->store('lokasi_profil_pembeli');
-        }
+        
         $pembeli_model->update([
             "nama_pembeli" => $nama_pembeli,
             "email" => $email,
@@ -178,8 +175,9 @@ class AuthController extends Controller
             "jk_pembeli" => $jk_pembeli,
             "tlp_pembeli" => $tlp_pembeli,
             "alamat_pembeli" => $alamat_pembeli,
-            "foto_pembeli" => $lokasi_profil_pembeli
         ]);
+
+        
         return redirect()->route('pembeli.profilPembeli');
     }
 
