@@ -12,13 +12,13 @@
             </div>
         </div>
         <div class="row">
-        {{-- <div class="col-sm-3">
+        <div class="col-sm-3">
                 <div class="text-center">
                 <img src="{{asset($pembeli->foto_pembeli)}}" class="avatar img-circle img-thumbnail" alt="avatar">
                 <h6>Upload foto</h6>
                 <input type="file" class="text-center center-block file-upload" name="foto_pembeli">
             </div>
-        </div> --}}
+        </div>
             <div class="col-sm-9">
                 <div class="tab-content">
                     <div class="tab-pane active" id="home">
