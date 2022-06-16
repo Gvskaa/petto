@@ -56,7 +56,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="keterangan" placeholder="Deskripsi">
+                    <textarea class="form-control form-control-lg" id="keterangan" name="keterangan" rows="6" cols="40" ></textarea>
                 </div>
                 <div class="form-group">
                     <input type="file" class="form-control form-control-lg" name="foto_barang" placeholder="Foto">

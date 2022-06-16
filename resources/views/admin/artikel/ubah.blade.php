@@ -33,10 +33,10 @@
                 >
                 @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="judul_artikel" value= {{$artikel->judul_artikel}}>
+                    <textarea class="form-control form-control-lg" id="judul_artikle" name="judul_artikel" rows="2" cols="20" >{{$artikel->judul_artikel}}</textarea>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="isi_artikel" value= {{$artikel->isi_artikel}}>
+                    <textarea class="form-control form-control-lg" id="isi_artikel" name="isi_artikel" rows="6" cols="40" >{{$artikel->isi_artikel}}</textarea>
                 </div>
                 <div class="form-group">
                     <input type="file" class="form-control form-control-lg" name="gambar_artikel" placeholder="Isi Artikel">
