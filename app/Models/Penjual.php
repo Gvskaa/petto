@@ -15,7 +15,7 @@ class Penjual extends Authenticatable
     protected $foreignId = 'id_admin';
     protected $primarykey = 'id';
     protected $fillable = [
-        'nama_penjual', 'email', 'password', 'nama_toko', 'tlp_penjual', 'status_penjual',
+        'nama_penjual', 'email', 'password', 'nama_toko', 'tlp_penjual', 'status_penjual', 'alamat_penjual'
     ];
 
     public function admin(){

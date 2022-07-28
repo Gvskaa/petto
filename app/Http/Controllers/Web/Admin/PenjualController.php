@@ -30,7 +30,6 @@ class PenjualController extends Controller
         $status_penjual = $request->status_penjual;
         $tlp_penjual = $request->tlp_penjual;
         $alamat_penjual = $request->alamat_penjual;
-
         $admin->penjual()->create([
             "nama_penjual" => $nama_penjual,
             "email" => $email,
@@ -38,7 +37,7 @@ class PenjualController extends Controller
             "nama_toko" => $nama_toko,
             "status_penjual" => $status_penjual,
             "tlp_penjual" => $tlp_penjual,
-            "alamat_penjual" => $alamat_penjual,
+            "alamat_penjual" => $alamat_penjual
         ]);
             return redirect()->route('admin.penjual.daftar');
     }

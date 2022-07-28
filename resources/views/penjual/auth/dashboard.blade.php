@@ -59,7 +59,7 @@ Dashboard
             <div class="col-md-6 mb-4 stretch-card transparent">
                 <div class="card card-dark-blue">
                     <div class="card-body">
-                        <p class="mb-4">Total Pembeli</p>
+                        <p class="mb-4">Total Pembelian</p>
                         <p class="fs-30 mb-2">{{$jumlah_pembelian}}</p>
                         
                     </div>

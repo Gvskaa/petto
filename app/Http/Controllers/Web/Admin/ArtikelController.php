@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Hash;
 class ArtikelController extends Controller
 {
     public function halaman_daftar_artikel(){
-        $admin = auth('admin')->user();
+        
+        $admin = auth('admin')->user(); //mengetahui siapa user yang sedang login
+        //mengambil semua daftar artikel yang ada di db
         $daftar_artikel = Artikel::all();
 
         return view ('admin.artikel.daftar',[
@@ -20,8 +22,15 @@ class ArtikelController extends Controller
         ]);
     }
 
+    public function daftar_artikel(){
+        $daftarArtikel = Artikel::select('select * from artikel ');
+        return view('admin.artikel.daftar', [
+            "daftarArtikel" => $daftarArtikel
+        ]);
+    }
+
     public function submit_register_artikel(Request $request){
-        //judul dan isi artikel tidak boleh kosong
+        //judul dan isi artikel tidak boleh kosong validasi
         $validated = $request->validate([
             'judul_artikel' => 'required',
             'isi_artikel' => 'required',
@@ -33,10 +42,11 @@ class ArtikelController extends Controller
         $judul_artikel =  $request->judul_artikel;
         $isi_artikel = $request->isi_artikel;
 
+        //buat menyimpan gambar
         if ($request->hasFile('gambar_artikel')) {
             $lokasi_gambar_artikel = $request->gambar_artikel->store('lokasi_gambar_artikel');
         }
-
+        //admin untk membuat sebuah artikel baru
         $admin->artikel()->create([
             "gambar_artikel" =>$lokasi_gambar_artikel,
             "judul_artikel" => $judul_artikel,
@@ -50,6 +60,7 @@ class ArtikelController extends Controller
         return view('admin.artikel.tambah');
     }
 
+    //mencari artikel mana yang ingi ubah sesuai dengan primary keynyaa 
     public function form_ubah_artikel($artikel){
         $artikel_model = Artikel::FindOrFail($artikel);
         return view('admin.artikel.ubah', [
@@ -66,6 +77,9 @@ class ArtikelController extends Controller
             ]);
     }
 
+    //tombol submit pada form ubah
+    //sama seperti create yang jadi pembeda disini kita mencari terlebih dahulu artikel yang mau diubah
+    //dengan keyword $artikel_model = Artikel::FindOrFail($artikel);
     public function ubah_artikel($artikel, Request $request){
         $admin = auth('admin')->user();
 

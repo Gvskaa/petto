@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Petto | Registrasi Penjual</title>
+    <title>Petto | Ubah</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
     <link rel="stylesheet" href="/admin/vendors/ti-icons/css/themify-icons.css">
@@ -24,47 +24,47 @@
         <div class="row w-100 mx-0">
             <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                <div class="brand-logo">
-                    <img src="/admin/images/logos.png" alt="logo">
-                </div>
-                <h4>Baru disini?</h4>
-                <h6 class="font-weight-light">Mendaftar itu mudah, Hanya butuh beberapa langkah.</h6>
+                <h4>Tambah Barang</h4>
+                <h6 class="font-weight-light">Masukkan data barang dengan benar!</h6>
                 <form class="pt-3"
                     method="POST"
-                    action="{{route ('admin.penjual.submit')}}"
-                >
+                    action="{{route ('penjual.barang.submit_ubah', $barang->id)}}"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="nama_penjual" placeholder="Nama">
+                    <input type="text" class="form-control form-control-lg" name="harga_barang" value="{{$barang->harga_barang}}">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
+                    <input type="text" class="form-control form-control-lg" name="nama_barang" value="{{$barang->nama_barang}}">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="nama_toko" placeholder="Nama Toko">
+                    <input type="text" class="form-control form-control-lg" name="stok_barang" value="{{$barang->stok_barang}}">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="status_penjual" placeholder="Status">
+                    <select class="form-control form-control-lg" name="status_barang">
+                    <option>{{$barang->status_barang}}</option>
+                    <option>Status Barang</option>
+                    <option>Tersedia</option>
+                    <option>Habis</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="tlp_penjual" placeholder="Telepon">
+                    <select class="form-control form-control-lg" name="kategori_barang">
+                        <option>{{$barang->kategori_barang}}</option>
+                        <option>Anjing</option>
+                        <option>Kucing</option>
+                        <option>Ikan</option>
+                        <option>Burung</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg"name="alamat_penjual" placeholder="Alamat">
+                    <textarea class="form-control form-control-lg" id="keterangan" name="keterangan" rows="6" cols="40" >{{$barang->keterangan}}</textarea>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control form-control-lg"name="password" placeholder="Password">
-                </div>
-                <div class="mb-4">
-                    <div class="form-check">
-                    <label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input">
-                        Saya setuju dengan semua Syarat & Ketentuan
-                    </label>
-                    </div>
+                    <input type="file" class="form-control form-control-lg" name="foto_barang" placeholder="Foto">
                 </div>
                 <div class="mt-3">
-                <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="DAFTAR"/>
+                <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="Tambah"/>
                 </div>
                 </form>
             </div>

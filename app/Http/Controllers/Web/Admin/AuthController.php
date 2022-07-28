@@ -37,6 +37,7 @@ class AuthController extends Controller
         }
     }
 
+    //untuk menampilkan ada berapa jumlah artikel, penjual, pembeli, dan jumlah barang
     public function halaman_dashboard_admin(){
         $admin = Auth::guard('admin')->user();
         $jumlah_penjual = Penjual::count();

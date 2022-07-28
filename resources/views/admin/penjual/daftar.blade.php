@@ -37,6 +37,9 @@ Data Penjual
                                     Telepon
                                 </th>
                                 <th>
+                                    Alamat
+                                </th>
+                                <th>
                                     Aksi
                                 </th>
                             </tr>
@@ -61,6 +64,9 @@ Data Penjual
                                 </td>
                                 <td>
                                     {{ $penjual->tlp_penjual }}
+                                </td>
+                                <td>
+                                    {{ $penjual->alamat_penjual }}
                                 </td>
                                 <td>
                                     <button type="submit" class="btn btn-inverse-primary btn-sm">
